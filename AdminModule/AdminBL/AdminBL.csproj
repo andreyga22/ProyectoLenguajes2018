@@ -39,7 +39,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLPlato.cs" />
+    <Compile Include="BLUsuario.cs" />
+    <Compile Include="managerUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AdminDAO\AdminDAO.csproj">
+      <Project>{b62fb13c-7d4b-45dc-9474-168962140c95}</Project>
+      <Name>AdminDAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AdminTO\AdminTO.csproj">
+      <Project>{9d29e23f-6a1f-40ae-bf36-ad4a7e7f1ed1}</Project>
+      <Name>AdminTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

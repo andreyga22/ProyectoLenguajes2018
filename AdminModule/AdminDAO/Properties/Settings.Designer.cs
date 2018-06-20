@@ -27,7 +27,7 @@ namespace AdminDAO.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("\"Data Source=SQL5023.site4now.net;Initial Catalog=DB_A3D05A_holabasededatos2;User" +
-            " Id=DB_A3D05A_holabasededatos2_admin;Password=YOUR_DB_PASSWORD;\"")]
+            " Id=DB_A3D05A_holabasededatos2_admin;Password=contraprueba1;\"")]
         public string cadena {
             get {
                 return ((string)(this["cadena"]));
