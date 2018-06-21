@@ -18,7 +18,7 @@ namespace AdminUI {
         protected void btnAgregar_Click(object sender, EventArgs e) {
             try {
 
-                ManejadorPlato manejador = new ManejadorPlato();
+                ManejadorPlatos manejador = new ManejadorPlatos();
                 int estado = estadoRb.SelectedIndex;
                 Boolean estado2;
                 if (estado == 0) {

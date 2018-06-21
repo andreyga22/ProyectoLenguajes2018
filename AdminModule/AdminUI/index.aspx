@@ -24,7 +24,7 @@
                     <asp:Button ID="btnPlatos" runat="server" Text="Platos" Width="75px" OnClick="btnPlatos_Click" />
                 </td>
                 <td class="auto-style2">
-                    <asp:Button ID="btnPedidos" runat="server" Text="Pedidos" Width="75px" />
+                    <asp:Button ID="btnPedidos" runat="server" Text="Pedidos" Width="75px" OnClick="btnPedidos_Click" />
                 </td>
             </tr>
             <tr>
