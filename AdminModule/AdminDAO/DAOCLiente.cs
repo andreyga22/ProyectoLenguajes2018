@@ -7,16 +7,16 @@ using System.Data.Sql;
 using AdminTO;
 namespace AdminDAO
 {
-    public class DAOUsuario
+    public class DAOCLiente
     {
 
         SqlConnection conexion = new SqlConnection("Data Source=SQL5023.site4now.net;Initial Catalog=DB_A3D05A_holabasededatos2;User Id=DB_A3D05A_holabasededatos2_admin;Password=contraprueba1;");
         String qry = "";
         SqlCommand comando;
 
-        public void InsertarUsuario(TOUsuario usuario)
+        public void InsertarCLIENTE(TOCLIENTE cliente)
         {
-            qry = "INSERT INTO USUARIO(NOMBRE_USUARIO, APELLIDO_USUARIO, ROL,EMAIL_USUARIO,CONTRASENA,APELLIDO2_USUARIO) VALUES(@NA,@AP,@RO,@EM,@CO,@APP);";
+            qry = "INSERT INTO CLIENTE(NOMBRE_CLIENTE, APELLIDO_CLIENTE, ROL,EMAIL_CLIENTE,TELEFONO,CONTRASENA,APELLIDO2_CLIENTE) VALUES(@NA,@AP,@RO,@EM,@CO,@APP);";
             comando = new SqlCommand(qry, conexion);
             comando.Parameters.AddWithValue("@NA",usuario.nombreUsuario);
             comando.Parameters.AddWithValue("@AP", usuario.primerApellido);
@@ -37,9 +37,9 @@ namespace AdminDAO
                 
 
         }
-        public void EditarUsuario(TOUsuario usuario)
+        public void EditarUsuario(TOCliente usuario)
         {
-            qry = "UPDATE USUARIO SET NOMBRE_USUARIO = @NA, APELLIDO_USUARIO = @AP, ROL = @RO, EMAIL_USUARIO = @EM, CONTRASENA = @CO, APELLIDO2_USUARIO = @APP WHERE ID = @ID;";
+            qry = "UPDATE CLIENTE SET NOMBRE_CLIENTE = @NA, APELLIDO_CLIENTE = @AP, ROL = @RO, EMAIL_CLIENTE = @EM, CONTRASENA = @CO, APELLIDO2_CLIENTE = @APP WHERE ID = @ID;";
             comando = new SqlCommand(qry, conexion);
             comando.Parameters.AddWithValue("@NA", usuario.nombreUsuario);
             comando.Parameters.AddWithValue("@AP", usuario.primerApellido);
@@ -58,10 +58,10 @@ namespace AdminDAO
 
             conexion.Close();
         }
-        public TOUsuario ConsultarUsuario(String id)
+        public TOCliente ConsultarUsuario(String id)
         {
-            TOUsuario usuario = new TOUsuario();
-            qry = "SELECT * FROM USUARIO WHERE ID = @ID; ";
+            TOCliente usuario = new TOCliente();
+            qry = "SELECT * FROM CLIENTE WHERE ID = @ID; ";
             comando = new SqlCommand(qry, conexion);
             comando.Parameters.AddWithValue("@ID", id);
 
@@ -90,9 +90,9 @@ namespace AdminDAO
             return usuario;
         }
 
-        public void EliminarUsuario(TOUsuario usuario)
+        public void EliminarUsuario(TOCliente usuario)
         {
-            qry = "DELETE FROM USUARIO WHERE ID = @ID; ";
+            qry = "DELETE FROM CLIENTE WHERE ID = @ID; ";
             comando = new SqlCommand(qry, conexion);
             comando.Parameters.AddWithValue("@ID", usuario.id);
           
@@ -105,11 +105,11 @@ namespace AdminDAO
             conexion.Close();
         }
 
-        public List<TOUsuario> listaUsuario()
+        public List<TOCliente> listaUsuario()
         {
            qry = "SELECT * FROM USUARIO;";
             comando = new SqlCommand(qry, conexion);
-            List<TOUsuario> lista = new List<TOUsuario>();
+            List<TOCliente> lista = new List<TOCliente>();
             conexion.Open();
             SqlDataReader reader = comando.ExecuteReader();
 
@@ -117,7 +117,7 @@ namespace AdminDAO
             {
                 while (reader.Read())
                 {
-                    TOUsuario usuario = new TOUsuario();
+                    TOCliente usuario = new TOCliente();
                     usuario.nombreUsuario = reader[0].ToString();
                     usuario.primerApellido = reader[1].ToString();
                     usuario.id = int.Parse(reader[2].ToString());

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace AdminBL
+namespace AdminTO
 {
-   public class BLUsuario
+    public class TOCliente
     {
         public String nombreUsuario { get; set; }
         public String primerApellido { get; set; }
@@ -15,11 +15,11 @@ namespace AdminBL
         public String email { get; set; }
         public String contrasena { get; set; }
 
-        public BLUsuario()
+        public TOCliente()
         {
 
         }
-        public BLUsuario(String nombreUsuario, String primerApellido, String segundoApellido,
+        public TOCliente(String nombreUsuario, String primerApellido, String segundoApellido, 
             int id, String rol, String email, String contrasena)
         {
             this.nombreUsuario = nombreUsuario;
@@ -30,5 +30,6 @@ namespace AdminBL
             this.email = email;
             this.contrasena = contrasena;
         }
+
     }
 }

@@ -6,33 +6,33 @@ using AdminTO;
 using AdminDAO;
 namespace AdminBL
 {
-    public class managerUsuario
+    public class managerCliente
     {
 
-        public void EliminarUsuario(BLUsuario usuario)
+        public void EliminarUsuario(BLCliente usuario)
         {
-            new DAOUsuario().EliminarUsuario(convert(usuario));
+            new DAOCLiente().EliminarUsuario(convert(usuario));
         }
 
-        public BLUsuario ConsultarUsuario(String id)
+        public BLCliente ConsultarUsuario(String id)
         {
-            return convert(new DAOUsuario().ConsultarUsuario(id));
+            return convert(new DAOCLiente().ConsultarUsuario(id));
         }
 
-        public void EditarUsuario(BLUsuario usuario)
+        public void EditarUsuario(BLCliente usuario)
         {
-            new DAOUsuario().EditarUsuario(convert(usuario));
+            new DAOCLiente().EditarUsuario(convert(usuario));
         }
 
-        public void InsertarUsuario(BLUsuario usuario)
+        public void InsertarUsuario(BLCliente usuario)
         {
-            new DAOUsuario().InsertarUsuario(convert(usuario));
+            new DAOCLiente().InsertarUsuario(convert(usuario));
         }
 
-        public List<BLUsuario> listaUsuario()
+        public List<BLCliente> listaUsuario()
         {
-            List<TOUsuario> listaTO = new DAOUsuario().listaUsuario();
-            List<BLUsuario> listaBL = new List<BLUsuario>();
+            List<TOCliente> listaTO = new DAOCLiente().listaUsuario();
+            List<BLCliente> listaBL = new List<BLCliente>();
 
             for (int i = 0;i<listaTO.Count();i++)
             {
@@ -46,9 +46,9 @@ namespace AdminBL
 
 
 
-        public TOUsuario convert(BLUsuario usuarioBL)
+        public TOCliente convert(BLCliente usuarioBL)
         {
-            TOUsuario usuario = new TOUsuario();
+            TOCliente usuario = new TOCliente();
             usuario.nombreUsuario = usuarioBL.nombreUsuario;
             usuario.primerApellido = usuarioBL.primerApellido;
             usuario.segundoApellido = usuarioBL.segundoApellido;
@@ -59,9 +59,9 @@ namespace AdminBL
             return usuario;
         }
 
-        public BLUsuario convert(TOUsuario usuarioTO)
+        public BLCliente convert(TOCliente usuarioTO)
         {
-            BLUsuario usuario = new BLUsuario();
+            BLCliente usuario = new BLCliente();
             usuario.nombreUsuario = usuarioTO.nombreUsuario;
             usuario.primerApellido = usuarioTO.primerApellido;
             usuario.segundoApellido = usuarioTO.segundoApellido;
