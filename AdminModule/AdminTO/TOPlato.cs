@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace AdminBL {
-    public class BLPlato {
+namespace AdminTO {
+    public class TOPlato {
+        public TOPlato() { }
 
-        public BLPlato() { }
-
-        public BLPlato(string nombre, string descripcion, double precio, string fotografia, int codigo, Boolean estado) {
+        public TOPlato(string nombre, string descripcion, double precio, string fotografia, int codigo, Boolean estado) {
             Nombre = nombre;
             Descripcion = descripcion;
             Precio = precio;
@@ -17,7 +16,7 @@ namespace AdminBL {
             Estado = estado;
         }
 
-        public BLPlato(string nombre, string descripcion, double precio, string fotografia, Boolean estado) {
+        public TOPlato(string nombre, string descripcion, double precio, string fotografia, Boolean estado) {
             Nombre = nombre;
             Descripcion = descripcion;
             Precio = precio;
@@ -82,15 +81,13 @@ namespace AdminBL {
                 }
             }
         }
-        public Boolean Estado{
+        public Boolean Estado {
             get {
                 return estado;
             }
             set {
-                
+
             }
         }
-
-        
     }
 }
