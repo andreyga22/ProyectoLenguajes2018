@@ -9,29 +9,29 @@ namespace AdminBL
     public class managerCliente
     {
 
-        public void EliminarUsuario(BLCliente usuario)
+        public void EliminarCliente(BLCliente cliente)
         {
-            new DAOCLiente().EliminarUsuario(convert(usuario));
+            new DAOCLiente().EliminarCliente(convert(cliente));
         }
 
-        public BLCliente ConsultarUsuario(String id)
+        public BLCliente ConsultarCliente(String id)
         {
-            return convert(new DAOCLiente().ConsultarUsuario(id));
+            return convert(new DAOCLiente().ConsultarCliente(id));
         }
 
-        public void EditarUsuario(BLCliente usuario)
+        public void EditarCliente(BLCliente cliente)
         {
-            new DAOCLiente().EditarUsuario(convert(usuario));
+            new DAOCLiente().EditarCliente(convert(cliente));
         }
 
-        public void InsertarUsuario(BLCliente usuario)
+        public void InsertarCliente(BLCliente cliente)
         {
-            new DAOCLiente().InsertarUsuario(convert(usuario));
+            new DAOCLiente().InsertarCliente(convert(cliente));
         }
 
-        public List<BLCliente> listaUsuario()
+        public List<BLCliente> listaCliente()
         {
-            List<TOCliente> listaTO = new DAOCLiente().listaUsuario();
+            List<TOCliente> listaTO = new DAOCLiente().listaCliente();
             List<BLCliente> listaBL = new List<BLCliente>();
 
             for (int i = 0;i<listaTO.Count();i++)
@@ -46,30 +46,32 @@ namespace AdminBL
 
 
 
-        public TOCliente convert(BLCliente usuarioBL)
+        public TOCliente convert(BLCliente clienteBL)
         {
-            TOCliente usuario = new TOCliente();
-            usuario.nombreUsuario = usuarioBL.nombreUsuario;
-            usuario.primerApellido = usuarioBL.primerApellido;
-            usuario.segundoApellido = usuarioBL.segundoApellido;
-            usuario.id = usuarioBL.id;
-            usuario.rol = usuarioBL.rol;
-            usuario.email = usuarioBL.email;
-            usuario.contrasena = usuarioBL.contrasena;
-            return usuario;
+            TOCliente Cliente = new TOCliente();
+            Cliente.nombreUsuario = clienteBL.nombreUsuario;
+            Cliente.primerApellido = clienteBL.primerApellido;
+            Cliente.segundoApellido = clienteBL.segundoApellido;
+            Cliente.telefono = clienteBL.telefono;
+            Cliente.id = clienteBL.id;
+            Cliente.rol = clienteBL.rol;
+            Cliente.email = clienteBL.email;
+            Cliente.contrasena = clienteBL.contrasena;
+            return Cliente;
         }
 
-        public BLCliente convert(TOCliente usuarioTO)
+        public BLCliente convert(TOCliente ClienteTO)
         {
-            BLCliente usuario = new BLCliente();
-            usuario.nombreUsuario = usuarioTO.nombreUsuario;
-            usuario.primerApellido = usuarioTO.primerApellido;
-            usuario.segundoApellido = usuarioTO.segundoApellido;
-            usuario.id = usuarioTO.id;
-            usuario.rol = usuarioTO.rol;
-            usuario.email = usuarioTO.email;
-            usuario.contrasena = usuarioTO.contrasena;
-            return usuario;
+            BLCliente Cliente = new BLCliente();
+            Cliente.nombreUsuario = ClienteTO.nombreUsuario;
+            Cliente.primerApellido = ClienteTO.primerApellido;
+            Cliente.segundoApellido = ClienteTO.segundoApellido;
+            Cliente.telefono = ClienteTO.telefono;
+            Cliente.id = ClienteTO.id;
+            Cliente.rol = ClienteTO.rol;
+            Cliente.email = ClienteTO.email;
+            Cliente.contrasena = ClienteTO.contrasena;
+            return Cliente;
         }
     }
 }

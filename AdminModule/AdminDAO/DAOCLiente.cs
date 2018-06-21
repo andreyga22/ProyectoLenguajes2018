@@ -14,18 +14,19 @@ namespace AdminDAO
         String qry = "";
         SqlCommand comando;
 
-        public void InsertarCLIENTE(TOCLIENTE cliente)
+        public void InsertarCliente(TOCliente cliente)
         {
-            qry = "INSERT INTO CLIENTE(NOMBRE_CLIENTE, APELLIDO_CLIENTE, ROL,EMAIL_CLIENTE,TELEFONO,CONTRASENA,APELLIDO2_CLIENTE) VALUES(@NA,@AP,@RO,@EM,@CO,@APP);";
+            qry = "INSERT INTO CLIENTE(NOMBRE_CLIENTE,APELLIDO1_CLIENTE,APELLIDO2_CLIENTE,EMAIL,TELEFONO,CONTRASENA_CLIENTE,ROL) VALUES(@NO,@PR,@SE,@EM,@TE,@CO,@RO);";
             comando = new SqlCommand(qry, conexion);
-            comando.Parameters.AddWithValue("@NA",usuario.nombreUsuario);
-            comando.Parameters.AddWithValue("@AP", usuario.primerApellido);
-            comando.Parameters.AddWithValue("@RO", usuario.rol);
-            comando.Parameters.AddWithValue("@EM", usuario.email);
-            comando.Parameters.AddWithValue("@CO", usuario.contrasena);
-            comando.Parameters.AddWithValue("@APP", usuario.segundoApellido);
+            comando.Parameters.AddWithValue("@NO",cliente.nombreUsuario);
+            comando.Parameters.AddWithValue("@PR", cliente.primerApellido);
+            comando.Parameters.AddWithValue("@SE", cliente.segundoApellido);
+            comando.Parameters.AddWithValue("@EM", cliente.email);
+            comando.Parameters.AddWithValue("@TE", cliente.telefono);
+            comando.Parameters.AddWithValue("@CO", cliente.contrasena);
+            comando.Parameters.AddWithValue("@RO", cliente.rol);
 
-           
+
             conexion.Open();
 
 
@@ -37,17 +38,18 @@ namespace AdminDAO
                 
 
         }
-        public void EditarUsuario(TOCliente usuario)
+        public void EditarCliente(TOCliente cliente)
         {
-            qry = "UPDATE CLIENTE SET NOMBRE_CLIENTE = @NA, APELLIDO_CLIENTE = @AP, ROL = @RO, EMAIL_CLIENTE = @EM, CONTRASENA = @CO, APELLIDO2_CLIENTE = @APP WHERE ID = @ID;";
+            qry = "UPDATE CLIENTE SET NOMBRE_CLIENTE = @NA, APELLIDO1_CLIENTE = @AP,APELLIDO2_CLIENTE = @APP, EMAIL = @EM,TELEFONO= @TE, CONTRASENA_CLIENTE = @CO, ROL = @RO  WHERE CODIGO_CLIENTE = @ID;";
             comando = new SqlCommand(qry, conexion);
-            comando.Parameters.AddWithValue("@NA", usuario.nombreUsuario);
-            comando.Parameters.AddWithValue("@AP", usuario.primerApellido);
-            comando.Parameters.AddWithValue("@ID", usuario.id);
-            comando.Parameters.AddWithValue("@RO", usuario.rol);
-            comando.Parameters.AddWithValue("@EM", usuario.email);
-            comando.Parameters.AddWithValue("@CO", usuario.contrasena);
-            comando.Parameters.AddWithValue("@APP", usuario.segundoApellido);
+            comando.Parameters.AddWithValue("@NA", cliente.nombreUsuario);
+            comando.Parameters.AddWithValue("@AP", cliente.primerApellido);
+            comando.Parameters.AddWithValue("@ID", cliente.id);
+            comando.Parameters.AddWithValue("@RO", cliente.rol);
+            comando.Parameters.AddWithValue("@EM", cliente.email);
+            comando.Parameters.AddWithValue("@TE", cliente.telefono);
+            comando.Parameters.AddWithValue("@CO", cliente.contrasena);
+            comando.Parameters.AddWithValue("@APP", cliente.segundoApellido);
 
 
             conexion.Open();
@@ -58,10 +60,10 @@ namespace AdminDAO
 
             conexion.Close();
         }
-        public TOCliente ConsultarUsuario(String id)
+        public TOCliente ConsultarCliente(String id)
         {
-            TOCliente usuario = new TOCliente();
-            qry = "SELECT * FROM CLIENTE WHERE ID = @ID; ";
+            TOCliente cliente = new TOCliente();
+            qry = "SELECT * FROM CLIENTE WHERE CODIGO_CLIENTE = @ID; ";
             comando = new SqlCommand(qry, conexion);
             comando.Parameters.AddWithValue("@ID", id);
 
@@ -73,28 +75,29 @@ namespace AdminDAO
             {
                 while (reader.Read())
                 {
-                    usuario.nombreUsuario = reader[0].ToString();
-                    usuario.primerApellido = reader[1].ToString();
-                    usuario.id = int.Parse(reader[2].ToString());
-                    usuario.rol = reader[3].ToString();
-                    usuario.email = reader[4].ToString();
-                    usuario.contrasena = reader[5].ToString();
-                    usuario.segundoApellido = reader[6].ToString();
-                }
+                    cliente.nombreUsuario = reader[0].ToString();
+                    cliente.primerApellido = reader[1].ToString();
+                    cliente.segundoApellido = reader[2].ToString();
+                    cliente.email = reader[3].ToString();
+                    cliente.telefono= reader[4].ToString();
+                    cliente.id = int.Parse(reader[5].ToString());
+                    cliente.contrasena = reader[6].ToString();
+                    cliente.rol = reader[7].ToString();
+                    }
             }
 
            
             conexion.Close();
 
 
-            return usuario;
+            return cliente;
         }
 
-        public void EliminarUsuario(TOCliente usuario)
+        public void EliminarCliente(TOCliente cliente)
         {
-            qry = "DELETE FROM CLIENTE WHERE ID = @ID; ";
+            qry = "DELETE FROM CLIENTE WHERE CODIGO_CLIENTE = @ID; ";
             comando = new SqlCommand(qry, conexion);
-            comando.Parameters.AddWithValue("@ID", usuario.id);
+            comando.Parameters.AddWithValue("@ID", cliente.id);
           
             conexion.Open();
 
@@ -105,9 +108,9 @@ namespace AdminDAO
             conexion.Close();
         }
 
-        public List<TOCliente> listaUsuario()
+        public List<TOCliente> listaCliente()
         {
-           qry = "SELECT * FROM USUARIO;";
+           qry = "SELECT * FROM CLIENTE;";
             comando = new SqlCommand(qry, conexion);
             List<TOCliente> lista = new List<TOCliente>();
             conexion.Open();
@@ -117,15 +120,16 @@ namespace AdminDAO
             {
                 while (reader.Read())
                 {
-                    TOCliente usuario = new TOCliente();
-                    usuario.nombreUsuario = reader[0].ToString();
-                    usuario.primerApellido = reader[1].ToString();
-                    usuario.id = int.Parse(reader[2].ToString());
-                    usuario.rol = reader[3].ToString();
-                    usuario.email = reader[4].ToString();
-                    usuario.contrasena = reader[5].ToString();
-                    usuario.segundoApellido = reader[6].ToString();
-                    lista.Add(usuario);
+                    TOCliente cliente = new TOCliente();
+                    cliente.nombreUsuario = reader[0].ToString();
+                    cliente.primerApellido = reader[1].ToString();
+                    cliente.segundoApellido = reader[2].ToString();
+                    cliente.email = reader[3].ToString();
+                    cliente.telefono = reader[4].ToString();
+                    cliente.id = int.Parse(reader[5].ToString());
+                    cliente.contrasena = reader[6].ToString();
+                    cliente.rol = reader[7].ToString();
+                    lista.Add(cliente);
                 }
             }
 

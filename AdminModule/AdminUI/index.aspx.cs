@@ -14,5 +14,10 @@ namespace AdminUI {
         protected void btnPlatos_Click(object sender, EventArgs e) {
 
         }
+
+        protected void btnPedidos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

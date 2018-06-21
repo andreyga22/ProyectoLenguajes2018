@@ -12,6 +12,8 @@ namespace AdminTO
         public String segundoApellido { get; set; }
         public int id { get; set; }
         public String rol { get; set; }
+        public String telefono { get; set; }
+
         public String email { get; set; }
         public String contrasena { get; set; }
 
@@ -19,14 +21,15 @@ namespace AdminTO
         {
 
         }
-        public TOCliente(String nombreUsuario, String primerApellido, String segundoApellido, 
-            int id, String rol, String email, String contrasena)
+        public TOCliente(String nombreUsuario, String primerApellido, String segundoApellido,
+            int id, String rol, String telefono, String email, String contrasena)
         {
             this.nombreUsuario = nombreUsuario;
             this.primerApellido = primerApellido;
             this.segundoApellido = segundoApellido;
             this.id = id;
             this.rol = rol;
+            this.telefono = telefono;
             this.email = email;
             this.contrasena = contrasena;
         }
