@@ -10,7 +10,7 @@ namespace AdminBL
         public String nombreUsuario { get; set; }
         public String primerApellido { get; set; }
         public String segundoApellido { get; set; }
-        public String id { get; set; }
+        public int id { get; set; }
         public String rol { get; set; }
         public String email { get; set; }
         public String contrasena { get; set; }
@@ -20,7 +20,7 @@ namespace AdminBL
 
         }
         public BLUsuario(String nombreUsuario, String primerApellido, String segundoApellido,
-            String id, String rol, String email, String contrasena)
+            int id, String rol, String email, String contrasena)
         {
             this.nombreUsuario = nombreUsuario;
             this.primerApellido = primerApellido;
