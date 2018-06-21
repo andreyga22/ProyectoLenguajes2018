@@ -20,6 +20,10 @@
         <asp:GridView ID="GridView1" runat="server">
         </asp:GridView>
         <br />
+        <asp:Label ID="Label9" runat="server" Text="ID:"></asp:Label>
+        <br />
+        <asp:TextBox ID="TextBox8" runat="server" Enabled="False"></asp:TextBox>
+        <br />
         <asp:Label ID="Label1" runat="server" Text="Nombre:"></asp:Label>
         <br />
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
@@ -47,9 +51,9 @@
         
         <br />
         <br />
-        <asp:Button ID="Button2" runat="server" Text="Insertar" />
-        <asp:Button ID="Button3" runat="server" Text="Editar" />
-        <asp:Button ID="Button4" runat="server" Text="Eliminar" />
+        <asp:Button ID="Button2" runat="server" Text="Insertar" OnClick="Button2_Click" />
+        <asp:Button ID="Button3" runat="server" Text="Editar" OnClick="Button3_Click" />
+        <asp:Button ID="Button4" runat="server" Text="Eliminar" OnClick="Button4_Click" />
         
         
     </div>

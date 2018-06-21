@@ -39,7 +39,7 @@ namespace AdminDAO
         }
         public void EditarUsuario(TOUsuario usuario)
         {
-            qry = "UPDATE USUARIO SET NOMBRE_USUARIO = @NA, APELLIDO_USUARIO = @AP, ROL = @RO, EMAIL_USUARIO = @EM, CONTRASENA = @CO, APELLIDO2_USUARIO = @APP, WHERE ID = @ID;";
+            qry = "UPDATE USUARIO SET NOMBRE_USUARIO = @NA, APELLIDO_USUARIO = @AP, ROL = @RO, EMAIL_USUARIO = @EM, CONTRASENA = @CO, APELLIDO2_USUARIO = @APP WHERE ID = @ID;";
             comando = new SqlCommand(qry, conexion);
             comando.Parameters.AddWithValue("@NA", usuario.nombreUsuario);
             comando.Parameters.AddWithValue("@AP", usuario.primerApellido);
