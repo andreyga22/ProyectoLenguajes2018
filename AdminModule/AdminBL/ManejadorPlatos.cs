@@ -5,10 +5,14 @@ using System.Text;
 
 namespace AdminBL {
     public class ManejadorPlatos {
-        public Boolean insertarPlato(BLPlato plato) {
-            try {
+        public Boolean insertarPlato(BLPlato plato)
+        {
+            try
+            {
 
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
 
@@ -17,7 +21,8 @@ namespace AdminBL {
 
 
 
-        public TO convert(BLCliente clienteBL) {
+        public TO convert(BLCliente clienteBL)
+        {
             TOCliente Cliente = new TOCliente();
             Cliente.nombreUsuario = clienteBL.nombreUsuario;
             Cliente.primerApellido = clienteBL.primerApellido;
@@ -30,7 +35,8 @@ namespace AdminBL {
             return Cliente;
         }
 
-        public BLCliente convert(TOCliente ClienteTO) {
+        public BLCliente convert(TOCliente ClienteTO)
+        {
             BLCliente Cliente = new BLCliente();
             Cliente.nombreUsuario = ClienteTO.nombreUsuario;
             Cliente.primerApellido = ClienteTO.primerApellido;

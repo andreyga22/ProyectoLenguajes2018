@@ -30,7 +30,7 @@ namespace AdminUI {
                 string url = path + fotoT.FileName;
                 fotoT.PostedFile.SaveAs(path + fotoT.FileName);
                 BLPlato plato = new BLPlato(nombreT.Text.Trim(), descripcionT.Text.Trim(), Convert.ToDouble(precioT.Text.Trim()), url, estado2);
-                Boolean seInserto=  manejador.insertarPlato(plato);
+                //Boolean seInserto=  manejador.insertarPlato(plato);
 
             } catch (Exception ex) {
                 throw ex;

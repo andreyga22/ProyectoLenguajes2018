@@ -11,6 +11,7 @@ namespace AdminBL
         public String estado { get; set; }
         public int codigo { get; set; }
         public String email { get; set; }
+        public List<BLDetallePedido> detalles { get; set; }
 
         public BLPedidos()
         {
