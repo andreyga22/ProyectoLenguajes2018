@@ -17,6 +17,15 @@ namespace AdminBL {
             Estado = estado;
         }
 
+        public BLPlato(int codigo) {
+            Nombre = "";
+            Descripcion = "";
+            Precio = 0;
+            Fotografia = "";
+            Codigo = codigo;
+            Estado = false;
+        }
+
         public BLPlato(string nombre, string descripcion, double precio, string fotografia, Boolean estado) {
             Nombre = nombre;
             Descripcion = descripcion;
@@ -87,7 +96,7 @@ namespace AdminBL {
                 return estado;
             }
             set {
-                
+                estado = value;
             }
         }
 

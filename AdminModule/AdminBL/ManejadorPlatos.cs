@@ -2,51 +2,47 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using AdminTO;
+using AdminDAO;
 
 namespace AdminBL {
     public class ManejadorPlatos {
-        public Boolean insertarPlato(BLPlato plato)
-        {
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-
+        public Boolean insertarPlato(BLPlato plato) {
+            //try {
+                return new DAOPlato().agregarPlato(convert(plato));
+            //} catch (Exception ex) {
+            //    throw ex;
+            //}
         }
 
 
 
-        public TO convert(BLCliente clienteBL)
-        {
-            TOCliente Cliente = new TOCliente();
-            Cliente.nombreUsuario = clienteBL.nombreUsuario;
-            Cliente.primerApellido = clienteBL.primerApellido;
-            Cliente.segundoApellido = clienteBL.segundoApellido;
-            Cliente.telefono = clienteBL.telefono;
-            Cliente.id = clienteBL.id;
-            Cliente.rol = clienteBL.rol;
-            Cliente.email = clienteBL.email;
-            Cliente.contrasena = clienteBL.contrasena;
-            return Cliente;
+        public TOPlato convert(BLPlato blPlato) {
+           return new TOPlato(blPlato.Nombre, blPlato.Descripcion, blPlato.Precio,blPlato.Fotografia, blPlato.Codigo, blPlato.Estado);
+            
         }
 
-        public BLCliente convert(TOCliente ClienteTO)
-        {
-            BLCliente Cliente = new BLCliente();
-            Cliente.nombreUsuario = ClienteTO.nombreUsuario;
-            Cliente.primerApellido = ClienteTO.primerApellido;
-            Cliente.segundoApellido = ClienteTO.segundoApellido;
-            Cliente.telefono = ClienteTO.telefono;
-            Cliente.id = ClienteTO.id;
-            Cliente.rol = ClienteTO.rol;
-            Cliente.email = ClienteTO.email;
-            Cliente.contrasena = ClienteTO.contrasena;
-            return Cliente;
+        public BLPlato convert(TOPlato toPlato) {
+            return new BLPlato(toPlato.Nombre, toPlato.Descripcion, toPlato.Precio, toPlato.Fotografia, toPlato.Codigo, toPlato.Estado);
+
+        }
+
+        public BLPlato buscarPlato(int cod) {
+            return convert(new DAOPlato().buscarPlato(new TOPlato(cod)));
+        }
+
+        public Boolean borrarPlato(int cod) {
+            return new DAOPlato().borrarPlato(Convert.ToInt32( cod));
+        }
+
+        public List<BLPlato> listaPlatos() {
+            DAOPlato dao = new DAOPlato();
+            List<TOPlato> listaTO = dao.listaPlatos();
+            List<BLPlato> listaBL = new List<BLPlato>();
+            foreach (TOPlato plato in listaTO) {
+                listaBL.Add(convert(plato));
+            }
+            return listaBL;
         }
     }
 }

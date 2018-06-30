@@ -16,7 +16,7 @@ namespace AdminDAO
 
         public void InsertarCliente(TOCliente cliente)
         {
-            qry = "INSERT INTO CLIENTE(NOMBRE_CLIENTE,APELLIDO1_CLIENTE,APELLIDO2_CLIENTE,EMAIL,TELEFONO,CONTRASENA_CLIENTE,ROL) VALUES(@NO,@PR,@SE,@EM,@TE,@CO,@RO);";
+            qry = "INSERT INTO CLIENTE(NOMBRE_CLIENTE,APELLIDO1_CLIENTE,APELLIDO2_CLIENTE,EMAIL,TELEFONO,CONTRASENA_CLIENTE,ROL,ESTADO) VALUES(@NO,@PR,@SE,@EM,@TE,@CO,@RO,@ES);";
             comando = new SqlCommand(qry, conexion);
             comando.Parameters.AddWithValue("@NO",cliente.nombreUsuario);
             comando.Parameters.AddWithValue("@PR", cliente.primerApellido);
@@ -25,6 +25,7 @@ namespace AdminDAO
             comando.Parameters.AddWithValue("@TE", cliente.telefono);
             comando.Parameters.AddWithValue("@CO", cliente.contrasena);
             comando.Parameters.AddWithValue("@RO", cliente.rol);
+            comando.Parameters.AddWithValue("@ES", cliente.estado);
 
 
             conexion.Open();
@@ -40,7 +41,7 @@ namespace AdminDAO
         }
         public void EditarCliente(TOCliente cliente)
         {
-            qry = "UPDATE CLIENTE SET NOMBRE_CLIENTE = @NA, APELLIDO1_CLIENTE = @AP,APELLIDO2_CLIENTE = @APP, EMAIL = @EM,TELEFONO= @TE, CONTRASENA_CLIENTE = @CO, ROL = @RO  WHERE CODIGO_CLIENTE = @ID;";
+            qry = "UPDATE CLIENTE SET NOMBRE_CLIENTE = @NA, APELLIDO1_CLIENTE = @AP,APELLIDO2_CLIENTE = @APP, EMAIL = @EM,TELEFONO= @TE, CONTRASENA_CLIENTE = @CO, ROL = @RO, ESTADO = @ES WHERE CODIGO_CLIENTE = @ID;";
             comando = new SqlCommand(qry, conexion);
             comando.Parameters.AddWithValue("@NA", cliente.nombreUsuario);
             comando.Parameters.AddWithValue("@AP", cliente.primerApellido);
@@ -50,6 +51,7 @@ namespace AdminDAO
             comando.Parameters.AddWithValue("@TE", cliente.telefono);
             comando.Parameters.AddWithValue("@CO", cliente.contrasena);
             comando.Parameters.AddWithValue("@APP", cliente.segundoApellido);
+            comando.Parameters.AddWithValue("@ES", cliente.estado);
 
 
             conexion.Open();
@@ -83,6 +85,7 @@ namespace AdminDAO
                     cliente.id = int.Parse(reader[5].ToString());
                     cliente.contrasena = reader[6].ToString();
                     cliente.rol = reader[7].ToString();
+                    cliente.estado = Convert.ToBoolean( reader[8]);
                     }
             }
 
@@ -129,6 +132,7 @@ namespace AdminDAO
                     cliente.id = int.Parse(reader[5].ToString());
                     cliente.contrasena = reader[6].ToString();
                     cliente.rol = reader[7].ToString();
+                    cliente.estado = Convert.ToBoolean(reader[8]);
                     lista.Add(cliente);
                 }
             }

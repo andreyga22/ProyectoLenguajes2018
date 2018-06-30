@@ -33,9 +33,15 @@
         <asp:Label ID="Label7" runat="server" Text="rol"></asp:Label>
         <asp:TextBox ID="txtRol" runat="server"></asp:TextBox>
         <br />
+        <asp:Label ID="Label8" runat="server" Text="Estado"></asp:Label>
+        <asp:RadioButtonList ID="RadioButtonList1" runat="server">
+            <asp:ListItem Selected="True">Activado</asp:ListItem>
+            <asp:ListItem>Desactivado</asp:ListItem>
+        </asp:RadioButtonList>
+        <br />
         <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Agregar" />
         <asp:Button ID="Button3" runat="server" Height="26px" OnClick="Button3_Click" Text="eliminar" />
-        <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Modificar" />
+        <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Modificar" Height="26px" />
         <br />
         <asp:TextBox ID="txtid" runat="server"></asp:TextBox>
         <br />

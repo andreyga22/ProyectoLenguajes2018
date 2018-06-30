@@ -57,6 +57,7 @@ namespace AdminBL
             Cliente.rol = clienteBL.rol;
             Cliente.email = clienteBL.email;
             Cliente.contrasena = clienteBL.contrasena;
+            Cliente.estado = clienteBL.estado;
             return Cliente;
         }
 
@@ -71,6 +72,7 @@ namespace AdminBL
             Cliente.rol = ClienteTO.rol;
             Cliente.email = ClienteTO.email;
             Cliente.contrasena = ClienteTO.contrasena;
+            Cliente.estado = ClienteTO.estado;
             return Cliente;
         }
     }

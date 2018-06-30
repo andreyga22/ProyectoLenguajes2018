@@ -17,12 +17,14 @@ namespace AdminBL
         public String email { get; set; }
         public String contrasena { get; set; }
 
+        public Boolean estado { get; set; }
+
         public BLCliente()
         {
 
         }
         public BLCliente(String nombreUsuario, String primerApellido, String segundoApellido,
-            int id, String rol,String telefono, String email, String contrasena)
+            int id, String rol,String telefono, String email, String contrasena, Boolean estado)
         {
             this.nombreUsuario = nombreUsuario;
             this.primerApellido = primerApellido;
@@ -32,6 +34,7 @@ namespace AdminBL
             this.telefono = telefono;
             this.email = email;
             this.contrasena = contrasena;
+            this.estado = estado;
         }
     }
 }

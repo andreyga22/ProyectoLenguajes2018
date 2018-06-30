@@ -28,7 +28,13 @@ namespace AdminUI
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            BLCliente cliente = new BLCliente(txtNombre.Text, txtPri.Text, txtSeg.Text, -1, txtRol.Text, txtTelefono.Text, txtEmail.Text, txtContra.Text);
+            Boolean estado;
+            if (RadioButtonList1.SelectedIndex == 0) {
+                estado = true;
+            } else {
+                estado = false;
+            }
+            BLCliente cliente = new BLCliente(txtNombre.Text, txtPri.Text, txtSeg.Text, -1, txtRol.Text, txtTelefono.Text, txtEmail.Text, txtContra.Text, estado);
             managerCliente mc = new managerCliente();
             mc.InsertarCliente(cliente);
 
@@ -37,7 +43,13 @@ namespace AdminUI
         protected void Button3_Click(object sender, EventArgs e)
         {
             managerCliente mc = new managerCliente();
-            BLCliente cliente = new BLCliente(txtNombre.Text, txtPri.Text, txtSeg.Text, Convert.ToInt32(txtid.Text), txtRol.Text, txtTelefono.Text, txtEmail.Text, txtContra.Text);
+            Boolean estado;
+            if (RadioButtonList1.SelectedIndex == 0) {
+                estado = true;
+            } else {
+                estado = false;
+            }
+            BLCliente cliente = new BLCliente(txtNombre.Text, txtPri.Text, txtSeg.Text, Convert.ToInt32(txtid.Text), txtRol.Text, txtTelefono.Text, txtEmail.Text, txtContra.Text, estado);
 
             mc.EliminarCliente(cliente);
         }
@@ -45,7 +57,13 @@ namespace AdminUI
         protected void Button4_Click(object sender, EventArgs e)
         {
             managerCliente mc = new managerCliente();
-            BLCliente cliente = new BLCliente(txtNombre.Text, txtPri.Text, txtSeg.Text, Convert.ToInt32(txtid.Text), txtRol.Text, txtTelefono.Text, txtEmail.Text, txtContra.Text);
+            Boolean estado;
+            if (RadioButtonList1.SelectedIndex == 0) {
+                estado = true;
+            } else {
+                estado = false;
+            }
+            BLCliente cliente = new BLCliente(txtNombre.Text, txtPri.Text, txtSeg.Text, Convert.ToInt32(txtid.Text), txtRol.Text, txtTelefono.Text, txtEmail.Text, txtContra.Text, estado);
 
             mc.EditarCliente(cliente);
 
