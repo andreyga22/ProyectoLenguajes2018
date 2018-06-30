@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AdminBL
 {
-    public class ManagerPedidos
-    {
+    public class ManagerPedidos {
+        
     }
 }

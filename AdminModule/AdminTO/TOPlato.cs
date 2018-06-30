@@ -16,6 +16,15 @@ namespace AdminTO {
             Estado = estado;
         }
 
+        public TOPlato(int codigo) {
+            Nombre = "";
+            Descripcion = "";
+            Precio = 0;
+            Fotografia = "";
+            Codigo = codigo;
+            Estado = false;
+        }
+
         public TOPlato(string nombre, string descripcion, double precio, string fotografia, Boolean estado) {
             Nombre = nombre;
             Descripcion = descripcion;
@@ -86,8 +95,11 @@ namespace AdminTO {
                 return estado;
             }
             set {
-
+                estado = value;
             }
         }
+
+
     }
 }
+
