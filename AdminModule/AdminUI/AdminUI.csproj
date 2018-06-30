@@ -56,6 +56,7 @@
     <Content Include="adminIndex.aspx" />
     <Content Include="ClienteMenu.aspx" />
     <Content Include="index.aspx" />
+    <Content Include="pedidos.aspx" />
     <Content Include="platos.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -87,6 +88,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pedidos.aspx.cs">
+      <DependentUpon>pedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pedidos.aspx.designer.cs">
+      <DependentUpon>pedidos.aspx</DependentUpon>
     </Compile>
     <Compile Include="platos.aspx.cs">
       <DependentUpon>platos.aspx</DependentUpon>

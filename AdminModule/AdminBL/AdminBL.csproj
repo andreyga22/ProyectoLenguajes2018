@@ -38,6 +38,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLDetallePedido.cs" />
     <Compile Include="BLPedidos.cs" />
     <Compile Include="BLPlato.cs" />
     <Compile Include="BLCliente.cs" />

@@ -13,5 +13,116 @@ namespace AdminDAO
         String qry = "";
         SqlCommand comando;
 
+        public void InsertarPedido(TOPedidos pedido)
+        {
+            qry = "INSERT INTO PEDIDO(FECHA,ESTADO_PEDIDO,EMAIL) VALUES(@FE,@ES,@EM);";
+            comando = new SqlCommand(qry, conexion);
+            comando.Parameters.AddWithValue("@FE", pedido.fecha);
+            comando.Parameters.AddWithValue("@ES", pedido.estado);
+            comando.Parameters.AddWithValue("@EM", pedido.email);
+            
+
+
+            conexion.Open();
+
+
+            comando.ExecuteNonQuery();
+
+
+            conexion.Close();
+
+
+
+        }
+        public void EditarPedido(TOPedidos pedido)
+        {
+            qry = "UPDATE PEDIDO SET ESTADO_PEDIDO = @ES,EMAIL = @EM WHERE CODIGO_PEDIDO = @CO;";
+            comando = new SqlCommand(qry, conexion);
+            comando.Parameters.AddWithValue("@ES", pedido.estado);
+            comando.Parameters.AddWithValue("@CO", pedido.codigo);
+            comando.Parameters.AddWithValue("@EM", pedido.email);
+
+
+            conexion.Open();
+
+
+            comando.ExecuteNonQuery();
+
+
+            conexion.Close();
+        }
+        public TOPedidos ConsultarPedido(String codigo)
+        {
+            TOPedidos pedido = new TOPedidos();
+            qry = "SELECT * FROM PEDIDO WHERE CODIGO_PEDIDO = @CO; ";
+            comando = new SqlCommand(qry, conexion);
+            comando.Parameters.AddWithValue("@CO", codigo);
+
+
+            conexion.Open();
+            SqlDataReader reader = comando.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    pedido.fecha = (DateTime)reader[0];
+                    pedido.estado = reader[1].ToString();
+                    pedido.codigo = int.Parse(reader[2].ToString());
+                    pedido.email = reader[3].ToString();
+                   
+                }
+            }
+
+
+            conexion.Close();
+
+
+            return pedido;
+        }
+
+        public void EliminarPedido(TOPedidos pedido)
+        {
+            qry = "DELETE FROM PEDIDO WHERE CODIGO_PEDIDO = @CO; ";
+            comando = new SqlCommand(qry, conexion);
+            comando.Parameters.AddWithValue("@CO", pedido.codigo);
+
+            conexion.Open();
+
+
+            comando.ExecuteNonQuery();
+
+
+            conexion.Close();
+        }
+
+        public List<TOPedidos> listaPedidos()
+        {
+            qry = "SELECT * FROM PEDIDO;";
+            comando = new SqlCommand(qry, conexion);
+            List<TOPedidos> lista = new List<TOPedidos>();
+            conexion.Open();
+            SqlDataReader reader = comando.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    TOPedidos pedido = new TOPedidos();
+                    pedido.fecha = (DateTime)reader[0];
+                    pedido.estado = reader[1].ToString();
+                    pedido.codigo = int.Parse(reader[2].ToString());
+                    pedido.email = reader[3].ToString();
+                    lista.Add(pedido);
+                }
+            }
+
+
+            conexion.Close();
+
+
+            return lista;
+        }
+
     }
 }
