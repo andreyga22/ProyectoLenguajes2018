@@ -5,13 +5,14 @@ using System.Text;
 
 namespace AdminBL
 {
-   public class BLPedidos
+    [Serializable]
+    public class BLPedidos
     {
         public DateTime fecha { get; set; }
         public String estado { get; set; }
         public int codigo { get; set; }
         public String email { get; set; }
-        public List<BLDetallePedido> detalles { get; set; }
+        public List<BLDetallePedido> detalles { get; set; } = new List<BLDetallePedido>();
 
         public BLPedidos()
         {

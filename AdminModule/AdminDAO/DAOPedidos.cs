@@ -20,14 +20,16 @@ namespace AdminDAO
             comando.Parameters.AddWithValue("@FE", pedido.fecha);
             comando.Parameters.AddWithValue("@ES", pedido.estado);
             comando.Parameters.AddWithValue("@EM", pedido.email);
-            
+            String cod = "";
+            String qryCODI = "SELECT TOP 1 codigo_pedido FROM pedido WHERE(fecha < GETDATE()) and(email = 'edgardo@ucr.com') ORDER BY FECHA DESC;";
+            SqlCommand comandoCODI = new SqlCommand(qryCODI, conexion);
 
 
             conexion.Open();
 
 
             comando.ExecuteNonQuery();
-
+            cod = comandoCODI.ExecuteScalar().ToString();
 
             conexion.Close();
 
@@ -70,6 +72,7 @@ namespace AdminDAO
                     pedido.estado = reader[1].ToString();
                     pedido.codigo = int.Parse(reader[2].ToString());
                     pedido.email = reader[3].ToString();
+                    pedido.detalles = new DAODetallePedido().detallesDePedido(pedido.codigo+"");
                    
                 }
             }
@@ -113,6 +116,7 @@ namespace AdminDAO
                     pedido.estado = reader[1].ToString();
                     pedido.codigo = int.Parse(reader[2].ToString());
                     pedido.email = reader[3].ToString();
+                    pedido.detalles = new DAODetallePedido().detallesDePedido(pedido.codigo.ToString());
                     lista.Add(pedido);
                 }
             }

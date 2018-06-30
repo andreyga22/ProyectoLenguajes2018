@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 
 namespace AdminBL {
+
+    [Serializable]
     public class BLPlato {
 
         public BLPlato() { }

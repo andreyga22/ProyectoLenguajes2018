@@ -42,6 +42,7 @@
     <Compile Include="BLPedidos.cs" />
     <Compile Include="BLPlato.cs" />
     <Compile Include="BLCliente.cs" />
+    <Compile Include="ManagerDetallePedido.cs" />
     <Compile Include="ManagerPedidos.cs" />
     <Compile Include="managerCliente.cs" />
     <Compile Include="ManejadorPlatos.cs" />
