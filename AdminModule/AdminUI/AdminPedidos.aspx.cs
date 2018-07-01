@@ -28,7 +28,7 @@ namespace AdminUI
             String buscado = TextBox4.Text;
             pedido = new ManagerPedidos().ConsultarPedidos(buscado);
             TextBox2.Text = pedido.email;
-            TextBox3.Text = pedido.estado;
+            RadioButtonList1.SelectedValue = pedido.estado;
             Label6.Text = pedido.codigo + "";
             Label7.Text = pedido.fecha.ToString();
             reset();
@@ -38,7 +38,7 @@ namespace AdminUI
         {
             pedido = new BLPedidos();
             pedido.email = TextBox2.Text;
-            pedido.estado = TextBox3.Text;
+            pedido.estado = RadioButtonList1.SelectedValue.ToString();
             pedido.fecha = DateTime.Now;
             new ManagerPedidos().InsertarPedidos(pedido);
             reset();
@@ -48,7 +48,7 @@ namespace AdminUI
         {
             pedido.codigo = int.Parse(Label6.Text);
             pedido.email = TextBox2.Text;
-            pedido.estado = TextBox3.Text;
+            pedido.estado = RadioButtonList1.SelectedValue.ToString();
             new ManagerPedidos().EditarPedidos(pedido);
             reset();
         }
@@ -63,16 +63,27 @@ namespace AdminUI
         protected void Button6_Click(object sender, EventArgs e)
         {
             TextBox2.Text = "";
-            TextBox3.Text = "";
             Label6.Text = "";
             Label7.Text = "";
         }
 
         protected void Button5_Click(object sender, EventArgs e)
         {
-
-
-
+            List<BLPedidos> lista = new ManagerPedidos().listaPedidos();
+            if (CheckBox1.Checked)
+            {
+                lista = new ManagerPedidos().listaPedidosFiltradaEstado(lista, RadioButtonList2.SelectedValue.ToString());
+            }
+            if (CheckBox2.Checked)
+            {
+                lista = new ManagerPedidos().listaPedidosFiltradaEmail(lista, TextBox5.Text);
+            }
+            if (CheckBox3.Checked)
+            {
+                lista = new ManagerPedidos().listaPedidosFiltradaFecha(lista, Calendar2.SelectedDate, Calendar3.SelectedDate);
+            }
+            GridView1.DataSource = lista;
+            GridView1.DataBind();
 
         }
     }

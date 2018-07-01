@@ -41,34 +41,52 @@ namespace AdminBL
             return listaBL;
         }
 
-        public List<BLPedidos> listaPedidosFiltrada(String email, String estado, DateTime fechaInicio,DateTime fechaFinal)
+        public List<BLPedidos> listaPedidosFiltradaEstado(List<BLPedidos> listaBL, String estado)
         {
-            List<TOPedidos> listaTO = new DAOPedidos().listaPedidos();
-            List<BLPedidos> listaBL = new List<BLPedidos>();
-
-            for (int i = 0; i < listaTO.Count(); i++)
+            List<BLPedidos> listaBLFill = new List<BLPedidos>();
+            for (int i = 0; i < listaBL.Count(); i++)
             {
-                bool aprueba = true;
-                if (email != String.Empty && !listaTO[i].email.Equals(email))
+                
+                if (estado != String.Empty && listaBL[i].estado.Equals(estado))
                 {
-                    aprueba = false;
-                }
-                if (estado != String.Empty && !listaTO[i].estado.Equals(estado))
-                {
-                    aprueba = false;
-                }
-                if (fechaInicio != null && fechaFinal != null && listaTO[i].fecha.CompareTo(fechaInicio) >= 0 && listaTO[i].fecha.CompareTo(fechaFinal) <= 0)
-                {
-                    aprueba = false;
-                }
-                if (aprueba == true)
-                {
-                    listaBL.Add(convert(listaTO[i]));
+                    listaBLFill.Add(listaBL[i]);
                 }
                
             }
 
-            return listaBL;
+            return listaBLFill;
+        }
+
+        public List<BLPedidos> listaPedidosFiltradaEmail(List<BLPedidos> listaBL, String email)
+        {
+            List<BLPedidos> listaBLFill = new List<BLPedidos>();
+            for (int i = 0; i < listaBL.Count(); i++)
+            {
+
+                if (email != String.Empty && listaBL[i].email.Equals(email))
+                {
+                    listaBLFill.Add(listaBL[i]);
+                }
+                
+            }
+
+            return listaBLFill;
+        }
+
+        public List<BLPedidos> listaPedidosFiltradaFecha(List<BLPedidos> listaBL,DateTime inicio,DateTime fin)
+        {
+            List<BLPedidos> listaBLFill = new List<BLPedidos>();
+            for (int i = 0; i < listaBL.Count(); i++)
+            {
+
+                if (inicio != null && fin != null && listaBL[i].fecha.CompareTo(inicio) >= 0 && listaBL[i].fecha.CompareTo(fin) <= 0)
+                {
+                    listaBLFill.Add(listaBL[i]);
+                }
+
+            }
+
+            return listaBLFill;
         }
 
 
