@@ -48,19 +48,24 @@ namespace AdminBL
 
             for (int i = 0; i < listaTO.Count(); i++)
             {
-                if ()
+                bool aprueba = true;
+                if (email != String.Empty && !listaTO[i].email.Equals(email))
                 {
-
+                    aprueba = false;
                 }
-                if ()
+                if (estado != String.Empty && !listaTO[i].estado.Equals(estado))
                 {
-
+                    aprueba = false;
                 }
-                if ()
+                if (fechaInicio != null && fechaFinal != null && listaTO[i].fecha.CompareTo(fechaInicio) >= 0 && listaTO[i].fecha.CompareTo(fechaFinal) <= 0)
                 {
-
+                    aprueba = false;
                 }
-                listaBL.Add(convert(listaTO[i]));
+                if (aprueba == true)
+                {
+                    listaBL.Add(convert(listaTO[i]));
+                }
+               
             }
 
             return listaBL;

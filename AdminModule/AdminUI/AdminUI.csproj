@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="adminIndex.aspx" />
+    <Content Include="AdminPedidos.aspx" />
     <Content Include="ClienteMenu.aspx" />
     <Content Include="index.aspx" />
     <Content Include="pedidos.aspx" />
@@ -74,6 +75,13 @@
     </Compile>
     <Compile Include="AdminModule.Master.designer.cs">
       <DependentUpon>AdminModule.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPedidos.aspx.cs">
+      <DependentUpon>AdminPedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPedidos.aspx.designer.cs">
+      <DependentUpon>AdminPedidos.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClienteMenu.aspx.cs">
       <DependentUpon>ClienteMenu.aspx</DependentUpon>

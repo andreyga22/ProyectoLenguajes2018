@@ -45,6 +45,7 @@
         inicio:<asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fin:<asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
         <br />
+        <br />
         <asp:Label ID="Label10" runat="server" Text="estado"></asp:Label>
         <br />
         <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
