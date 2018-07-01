@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="adminIndex.aspx" />
+    <Content Include="adminPlatos.aspx" />
     <Content Include="ClienteMenu.aspx" />
     <Content Include="index.aspx" />
     <Content Include="pedidos.aspx" />
@@ -75,6 +76,13 @@
     <Compile Include="AdminModule.Master.designer.cs">
       <DependentUpon>AdminModule.Master</DependentUpon>
     </Compile>
+    <Compile Include="adminPlatos.aspx.cs">
+      <DependentUpon>adminPlatos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminPlatos.aspx.designer.cs">
+      <DependentUpon>adminPlatos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ClienteMenu.aspx.cs">
       <DependentUpon>ClienteMenu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -91,7 +99,6 @@
     </Compile>
     <Compile Include="pedidos.aspx.cs">
       <DependentUpon>pedidos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pedidos.aspx.designer.cs">
       <DependentUpon>pedidos.aspx</DependentUpon>
@@ -135,7 +142,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>3138</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

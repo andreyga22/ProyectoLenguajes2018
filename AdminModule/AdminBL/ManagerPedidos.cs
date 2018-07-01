@@ -41,30 +41,29 @@ namespace AdminBL
             return listaBL;
         }
 
-        public List<BLPedidos> listaPedidosFiltrada(String email, String estado, DateTime fechaInicio,DateTime fechaFinal)
-        {
-            List<TOPedidos> listaTO = new DAOPedidos().listaPedidos();
-            List<BLPedidos> listaBL = new List<BLPedidos>();
+        //public List<BLPedidos> listaPedidosFiltrada(String email, String estado, DateTime fechaInicio, DateTime fechaFinal) {
+        //    List<TOPedidos> listaTO = new DAOPedidos().listaPedidos();
+        //    List<BLPedidos> listaBL = new List<BLPedidos>();
 
-            for (int i = 0; i < listaTO.Count(); i++)
-            {
-                if ()
-                {
+        //    for (int i = 0; i < listaTO.Count(); i++)
+        //    {
+        //        if ()
+        //        {
 
-                }
-                if ()
-                {
+        //        }
+        //        if ()
+        //        {
 
-                }
-                if ()
-                {
+        //        }
+        //        if ()
+        //        {
 
-                }
-                listaBL.Add(convert(listaTO[i]));
-            }
+        //        }
+        //        listaBL.Add(convert(listaTO[i]));
+        //    }
 
-            return listaBL;
-        }
+        //    return listaBL;
+        //}
 
 
 
