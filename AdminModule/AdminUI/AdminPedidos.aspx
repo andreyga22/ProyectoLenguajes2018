@@ -22,12 +22,27 @@
             height: 187px;
             width: 241px;
         }
+        .auto-style7 {
+            width: 147%;
+        }
+        .auto-style8 {
+            height: 274px;
+            width: 477px;
+        }
+        .auto-style9 {
+            height: 151px;
+            width: 477px;
+        }
+        .auto-style10 {
+            height: 187px;
+            width: 477px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <table style="width:100%;">
+    <table class="auto-style7">
         <tr>
             <td class="auto-style4">
                 <asp:Label ID="Label14" runat="server" Text="Busqueda por email"></asp:Label>
@@ -52,15 +67,19 @@
         <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
                 <br />
         <asp:Label ID="Label3" runat="server" Text="Estado"></asp:Label>
-                <br />
-        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-                <br />
+                <asp:RadioButtonList ID="RadioButtonList1" runat="server">
+                    <asp:ListItem>A Tiempo</asp:ListItem>
+                    <asp:ListItem>Sobre Tiempo</asp:ListItem>
+                    <asp:ListItem>Demorado</asp:ListItem>
+                    <asp:ListItem>Anulado</asp:ListItem>
+                    <asp:ListItem>Entregado</asp:ListItem>
+                </asp:RadioButtonList>
                 <br />
         <asp:Button ID="Button1" runat="server" Text="Insertar" OnClick="Button1_Click" />
         <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="editar" />
         <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="eliminar" />
             </td>
-            <td class="auto-style3">
+            <td class="auto-style8">
                 <br />
                 <br />
                 <br />
@@ -83,38 +102,75 @@
         </tr>
         <tr>
             <td class="auto-style5">
+        &nbsp;<br />
         <asp:Label ID="Label8" runat="server" Text="Email cliente"></asp:Label>
+                <asp:CheckBox ID="CheckBox2" runat="server" />
                 <br />
         <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
                 <br />
+                <br />
+                <br />
+                <br />
+                <br />
         <asp:Label ID="Label10" runat="server" Text="Estado"></asp:Label>
+                <asp:CheckBox ID="CheckBox1" runat="server" />
                 <br />
-        <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                <asp:RadioButtonList ID="RadioButtonList2" runat="server">
+                    <asp:ListItem>A Tiempo</asp:ListItem>
+                    <asp:ListItem>Sobre Tiempo</asp:ListItem>
+                    <asp:ListItem>Demorado</asp:ListItem>
+                    <asp:ListItem>Anulado</asp:ListItem>
+                    <asp:ListItem>Entregado</asp:ListItem>
+                </asp:RadioButtonList>
                 <br />
                 <br />
+            </td>
+            <td class="auto-style9">
+        <asp:Button ID="Button5" runat="server" Text="filtrar lista" OnClick="Button5_Click" />
+        <asp:GridView ID="GridView1" runat="server" Width="453px" Height="419px">
+        </asp:GridView>
+    
+                <br />
+                <br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <br />
+                <br />
+    
+            </td>
+            <td class="auto-style2">
                 <asp:Label ID="Label11" runat="server" Text="Fechas"></asp:Label>
+                <asp:CheckBox ID="CheckBox3" runat="server" />
                 <br />
                 <br />
                 <asp:Label ID="Label12" runat="server" Text="Fecha inicio"></asp:Label>
-                <br />
-                <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
-                <br />
+                <asp:Calendar ID="Calendar2" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
+                    <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
+                    <NextPrevStyle VerticalAlign="Bottom" />
+                    <OtherMonthDayStyle ForeColor="#808080" />
+                    <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+                    <SelectorStyle BackColor="#CCCCCC" />
+                    <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
+                    <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
+                    <WeekendDayStyle BackColor="#FFFFCC" />
+                </asp:Calendar>
                 <br />
                 <asp:Label ID="Label13" runat="server" Text="Fecha fin"></asp:Label>
-                <br />
-                <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
+                <asp:Calendar ID="Calendar3" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
+                    <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
+                    <NextPrevStyle VerticalAlign="Bottom" />
+                    <OtherMonthDayStyle ForeColor="#808080" />
+                    <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+                    <SelectorStyle BackColor="#CCCCCC" />
+                    <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
+                    <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
+                    <WeekendDayStyle BackColor="#FFFFCC" />
+                </asp:Calendar>
             </td>
-            <td class="auto-style2">
-        <asp:Button ID="Button5" runat="server" Text="filtrar lista" OnClick="Button5_Click" />
-        <asp:GridView ID="GridView1" runat="server" Width="453px">
-        </asp:GridView>
-    
-            </td>
-            <td class="auto-style2"></td>
         </tr>
         <tr>
             <td class="auto-style6"></td>
-            <td class="auto-style1"></td>
+            <td class="auto-style10"></td>
             <td class="auto-style1"></td>
         </tr>
     </table>
