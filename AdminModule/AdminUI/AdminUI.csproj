@@ -56,7 +56,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="adminIndex.aspx" />
+    <Content Include="AdminPedidos.aspx" />
     <Content Include="adminPlatos.aspx" />
+    <Content Include="bin\AdminBL.dll" />
+    <Content Include="bin\AdminBL.pdb" />
+    <Content Include="bin\AdminDAO.dll" />
+    <Content Include="bin\AdminDAO.pdb" />
+    <Content Include="bin\AdminTO.dll" />
+    <Content Include="bin\AdminTO.pdb" />
+    <Content Include="bin\AdminUI.dll" />
+    <Content Include="bin\AdminUI.pdb" />
     <Content Include="ClienteMenu.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -65,9 +74,11 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="index.aspx" />
+    <Content Include="obj\Debug\AdminUI.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\AdminUI.dll" />
+    <Content Include="obj\Debug\AdminUI.pdb" />
     <Content Include="pedidos.aspx" />
     <Content Include="platos.aspx" />
-    <Content Include="packages.config" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -90,6 +101,9 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="bin\AdminUI.dll.config" />
+    <Content Include="obj\Debug\AdminUI.csprojResolveAssemblyReference.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -119,6 +133,13 @@
     </Compile>
     <Compile Include="AdminModule.Master.designer.cs">
       <DependentUpon>AdminModule.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPedidos.aspx.cs">
+      <DependentUpon>AdminPedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPedidos.aspx.designer.cs">
+      <DependentUpon>AdminPedidos.aspx</DependentUpon>
     </Compile>
     <Compile Include="adminPlatos.aspx.cs">
       <DependentUpon>adminPlatos.aspx</DependentUpon>
@@ -185,13 +206,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="img\" />
+    <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="server_images\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
