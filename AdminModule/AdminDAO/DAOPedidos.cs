@@ -33,6 +33,11 @@ namespace AdminDAO
 
             conexion.Close();
 
+            for (int i = 0; i < pedido.detalles.Count;i++)
+            {
+                new DAODetallePedido().InsertarDPedido(pedido.detalles[i], cod);
+            }
+
 
 
         }

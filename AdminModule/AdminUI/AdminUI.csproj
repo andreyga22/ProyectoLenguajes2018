@@ -99,6 +99,7 @@
     </Compile>
     <Compile Include="pedidos.aspx.cs">
       <DependentUpon>pedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pedidos.aspx.designer.cs">
       <DependentUpon>pedidos.aspx</DependentUpon>
