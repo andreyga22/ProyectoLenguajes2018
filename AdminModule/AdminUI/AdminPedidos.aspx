@@ -36,6 +36,16 @@
         <asp:Button ID="Button2" runat="server" Text="Buscar" OnClick="Button2_Click" />
                 <br />
                 <br />
+                <br />
+        <asp:Label ID="Label4" runat="server" Text="CODIGO: "></asp:Label>
+        <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="Button6" runat="server" OnClick="Button6_Click" Text="Limpiar" />
+                <br />
+        <asp:Label ID="Label5" runat="server" Text="FECHA: "></asp:Label>
+        <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
+                <br />
+                <br />
     
         <asp:Label ID="Label2" runat="server" Text="email"></asp:Label>
                 <br />
@@ -44,12 +54,6 @@
         <asp:Label ID="Label3" runat="server" Text="Estado"></asp:Label>
                 <br />
         <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-                <br />
-        <asp:Label ID="Label4" runat="server" Text="CODIGO: "></asp:Label>
-        <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
-                <br />
-        <asp:Label ID="Label5" runat="server" Text="FECHA: "></asp:Label>
-        <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
                 <br />
                 <br />
         <asp:Button ID="Button1" runat="server" Text="Insertar" OnClick="Button1_Click" />
@@ -101,7 +105,7 @@
                 <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
             </td>
             <td class="auto-style2">
-        <asp:Button ID="Button5" runat="server" Text="filtrar lista" />
+        <asp:Button ID="Button5" runat="server" Text="filtrar lista" OnClick="Button5_Click" />
         <asp:GridView ID="GridView1" runat="server" Width="453px">
         </asp:GridView>
     
