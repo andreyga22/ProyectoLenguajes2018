@@ -43,6 +43,36 @@ namespace AdminDAO {
             return inserto;
         }
 
+        public void actualizarPlato(TOPlato tOPlato) {
+            
+            try {
+                string update = "update Plato set nombre=@nom, descripcion=@des, precio=@pre, foto=@fot, estado_plato=@est where codigo_Plato=@cod;";
+                SqlCommand sentencia = new SqlCommand(update, conexion);
+                sentencia.Parameters.AddWithValue("@nom", tOPlato.Nombre);
+                sentencia.Parameters.AddWithValue("@des", tOPlato.Descripcion);
+                sentencia.Parameters.AddWithValue("@pre", tOPlato.Precio);
+                sentencia.Parameters.AddWithValue("@fot", tOPlato.Fotografia);
+                sentencia.Parameters.AddWithValue("@cod", tOPlato.Codigo);
+                sentencia.Parameters.AddWithValue("@est", tOPlato.Estado);
+
+                if (conexion.State != ConnectionState.Open) {
+                    conexion.Open();
+                }
+
+                sentencia.ExecuteNonQuery();
+
+                if (conexion.State != ConnectionState.Closed) {
+                    conexion.Close();
+                }
+            } catch (SqlException ex) {
+                throw ex;
+            } catch (Exception ex2) {
+                throw ex2;
+            } finally {
+                conexion.Close();
+            }
+        }
+
         public Boolean borrarPlato(int cod) {
             try {
                 string select = "delete from Plato where Codigo_Plato = @cod;";

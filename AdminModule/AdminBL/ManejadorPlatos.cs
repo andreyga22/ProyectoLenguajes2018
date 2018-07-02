@@ -44,5 +44,10 @@ namespace AdminBL {
             }
             return listaBL;
         }
+
+        public void actualizarPlato(BLPlato bl) {
+            DAOPlato dao = new DAOPlato();
+            dao.actualizarPlato(convert(bl));
+        }
     }
 }

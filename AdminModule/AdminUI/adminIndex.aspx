@@ -15,7 +15,7 @@
                   <div class="card-body">
                     <h5 class="card-title">Pedidos</h5>
                     <p class="card-text">Administre todos los pedidos</p>
-                    <a href="#" class="btn btn-primary">Pedidos</a>
+                    <a href="AdminPedidos.aspx" class="btn btn-primary">Pedidos</a>
                   </div>
                 </div>
            </div>
@@ -26,7 +26,7 @@
                   <div class="card-body">
                     <h5 class="card-title">Platos</h5>
                     <p class="card-text">Administre todos los platos</p>
-                    <a href="#" class="btn btn-primary">Platos</a>
+                    <a href="adminPlatos.aspx" class="btn btn-primary">Platos</a>
                   </div>
                 </div>
            </div>
