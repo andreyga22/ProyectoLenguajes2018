@@ -18,7 +18,7 @@
         <div class="row align-items-center">
             
             
-            <div class="col-sm-12">
+            <div class="col-12">
                 <asp:GridView ID="gvPlatos" runat="server" class="table table-striped table-bordered table-responsive" BorderStyle="None" BorderWidth="0px">
                 </asp:GridView>
             </div>
@@ -87,8 +87,8 @@
         </div>
         <div class="row align-items-center">
             <div class="col-sm-4 offset-3 align-self-start">
-                    <asp:Button ID="btnGuardarMod" runat="server" Text="Insertar/Modificar" type="button" class="btn btn-danger"/>
-                    <asp:Button ID="btnBorrar" runat="server" Text="Borrar" type="button" class="btn btn-light"/>
+                    <asp:Button ID="btnGuardarMod" runat="server" Text="Insertar/Modificar" type="button" class="btn btn-danger" OnClick="btnGuardarMod_Click"/>
+                    <asp:Button ID="btnBorrar" runat="server" Text="Borrar" type="button" class="btn btn-light" OnClick="btnBorrar_Click"/>
 
                     <br />
                     <br />
