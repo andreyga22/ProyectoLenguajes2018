@@ -55,6 +55,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminClientes.aspx" />
     <Content Include="adminIndex.aspx" />
     <Content Include="AdminPedidos.aspx" />
     <Content Include="adminPlatos.aspx" />
@@ -120,6 +121,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminClientes.aspx.cs">
+      <DependentUpon>AdminClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminClientes.aspx.designer.cs">
+      <DependentUpon>AdminClientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="adminIndex.aspx.cs">
       <DependentUpon>adminIndex.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

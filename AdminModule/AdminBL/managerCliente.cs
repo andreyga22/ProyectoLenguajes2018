@@ -28,6 +28,16 @@ namespace AdminBL
         {
             new DAOCLiente().InsertarCliente(convert(cliente));
         }
+        public void insertarOModificar(BLCliente cliente) {
+            if (cliente.id==0)
+            {
+                InsertarCliente(cliente);
+            }
+            else
+            {
+                EditarCliente(cliente);
+            }
+        }
 
         public List<BLCliente> listaCliente()
         {
@@ -42,7 +52,26 @@ namespace AdminBL
             return listaBL;
         }
 
+        public List<BLCliente> listaEnmascarada()
+        {
+            List<BLCliente> lista = listaCliente();
+            for (int i = 0; i < lista.Count; i++)
+            {
+                lista[i].contrasena = enmascarar(listaCliente()[i].contrasena);  
 
+            }
+            return lista; 
+
+        }
+
+        public String enmascarar(String clave) {
+            String mascara = "";
+            for (int i = 0; i < clave.Length; i++)
+            {
+                mascara += "*";
+            }
+            return mascara;
+        } 
 
 
 
