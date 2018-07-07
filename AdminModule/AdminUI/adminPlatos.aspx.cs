@@ -13,6 +13,7 @@ namespace AdminUI {
     public partial class adminPlatos : System.Web.UI.Page {
         private string url = "";
         protected void Page_Load(object sender, EventArgs e) {
+            //new ControlUsuarioLogin().verificaAdmin();
             btnBorrar.Enabled = false;
             cargarGrid();
 

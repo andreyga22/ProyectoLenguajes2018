@@ -68,13 +68,16 @@
     <Content Include="bin\AdminUI.dll" />
     <Content Include="bin\AdminUI.pdb" />
     <Content Include="ClienteMenu.aspx" />
+    <Content Include="cocinaIndex.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="ControlUsuarioLogin.aspx" />
     <Content Include="index.aspx" />
+    <Content Include="login.aspx" />
     <Content Include="obj\Debug\AdminUI.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\AdminUI.dll" />
     <Content Include="obj\Debug\AdminUI.pdb" />
@@ -163,12 +166,33 @@
     <Compile Include="ClienteMenu.aspx.designer.cs">
       <DependentUpon>ClienteMenu.aspx</DependentUpon>
     </Compile>
+    <Compile Include="cocinaIndex.aspx.cs">
+      <DependentUpon>cocinaIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cocinaIndex.aspx.designer.cs">
+      <DependentUpon>cocinaIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlUsuarioLogin.aspx.cs">
+      <DependentUpon>ControlUsuarioLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlUsuarioLogin.aspx.designer.cs">
+      <DependentUpon>ControlUsuarioLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="pedidos.aspx.cs">
       <DependentUpon>pedidos.aspx</DependentUpon>

@@ -13,6 +13,8 @@ namespace AdminUI
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            //new ControlUsuarioLogin().verificaAdmin();
+
             if (!IsPostBack)
             {
                 BLCliente cliente = new BLCliente();
@@ -22,7 +24,7 @@ namespace AdminUI
             gvClientes.DataSource = mc.listaEnmascarada();
             gvClientes.DataBind();
 
-
+            
 
         }
 

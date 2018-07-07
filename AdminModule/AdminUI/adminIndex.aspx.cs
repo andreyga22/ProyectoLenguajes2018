@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 namespace AdminUI {
     public partial class adminIndex : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-
+            //new ControlUsuarioLogin().verificaAdmin();
         }
     }
 }

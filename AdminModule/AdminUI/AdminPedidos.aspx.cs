@@ -9,9 +9,11 @@ namespace AdminUI
 {
     public partial class AdminPedidos : System.Web.UI.Page
     {
+
         BLPedidos pedido = new BLPedidos();
         protected void Page_Load(object sender, EventArgs e)
         {
+            //new ControlUsuarioLogin().verificaAdmin();
             ViewState["pedido"] = new BLPedidos();
             reset();
         }

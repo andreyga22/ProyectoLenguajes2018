@@ -19,6 +19,17 @@ namespace AdminBL
             return convert(new DAOCLiente().ConsultarCliente(id));
         }
 
+        public BLCliente ConsultarClienteConContraseña(String id,String contra)
+        {
+            BLCliente cli = convert(new DAOCLiente().ConsultarCliente(id));
+            if (cli.contrasena.Equals(contra))
+            {
+                return cli;
+            }
+
+            return null;
+        }
+
         public void EditarCliente(BLCliente cliente)
         {
             new DAOCLiente().EditarCliente(convert(cliente));

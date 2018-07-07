@@ -5,6 +5,7 @@ using System.Text;
 
 namespace AdminBL
 {
+    [Serializable]
    public class BLCliente
     {
         public String nombreUsuario { get; set; }
