@@ -18,6 +18,7 @@ namespace AdminUI
         public void cerrarSesion()
         {
             Session["usuarioLO"] = null;
+            Response.Redirect("login.aspx");
         }
 
         public BLCliente user()
