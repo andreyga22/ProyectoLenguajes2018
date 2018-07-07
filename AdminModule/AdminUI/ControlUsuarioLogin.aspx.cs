@@ -14,27 +14,33 @@ namespace AdminUI
 
         }
 
+
+        public void cerrarSesion()
+        {
+            Session["usuarioLO"] = null;
+        }
+
         public BLCliente user()
         {
             return (BLCliente)Session["usuarioLO"];
         }
         public void verificaCliente()
         {
-            if (!user().rol.Equals("Cliente"))
+            if (user() != null && !user().rol.Equals("Cliente"))
             {
                 Response.Redirect("login.aspx");
             }
         }
         public void verificaCocina()
         {
-            if (!user().rol.Equals("Cocina"))
+            if (user() != null && !user().rol.Equals("Cocina"))
             {
                 Response.Redirect("login.aspx");
             }
         }
         public void verificaAdmin()
         {
-            if (!user().rol.Equals("Administrador"))
+            if (user() != null && !user().rol.Equals("Administrador"))
             {
                 Response.Redirect("login.aspx");
             }

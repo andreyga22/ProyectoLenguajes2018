@@ -13,7 +13,7 @@ namespace AdminUI
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            //new ControlUsuarioLogin().verificaAdmin();
+             //new ControlUsuarioLogin().verificaAdmin();
 
             if (!IsPostBack)
             {

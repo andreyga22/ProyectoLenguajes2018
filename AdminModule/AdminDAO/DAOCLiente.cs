@@ -65,7 +65,7 @@ namespace AdminDAO
         public TOCliente ConsultarCliente(String id)
         {
             TOCliente cliente = new TOCliente();
-            qry = "SELECT * FROM CLIENTE WHERE CODIGO_CLIENTE = @ID; ";
+            qry = "SELECT * FROM CLIENTE WHERE EMAIL = @ID;";
             comando = new SqlCommand(qry, conexion);
             comando.Parameters.AddWithValue("@ID", id);
 
