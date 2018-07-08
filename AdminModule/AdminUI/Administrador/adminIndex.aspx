@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminModule.Master" AutoEventWireup="true" CodeBehind="adminIndex.aspx.cs" Inherits="AdminUI.adminIndex" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Administrador/AdminModule.Master" AutoEventWireup="true" CodeBehind="adminIndex.aspx.cs" Inherits="AdminUI.adminIndex" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
 </asp:Content>
@@ -11,7 +11,7 @@
        <div class ="row align-items-center">
            <div class ="col-sm-6 align-self-center" >
                <div class="card" style="width: 18rem;">
-                  <img class="card-img-top" src="server_images/order.jpg" alt="Card image cap" height="200" width="200"/>
+                  <img class="card-img-top" src="~/server_images/order.jpg" alt="Card image cap" height="200" width="200"/>
                   <div class="card-body">
                     <h5 class="card-title">Pedidos</h5>
                     <p class="card-text">Administre todos los pedidos</p>
@@ -22,7 +22,7 @@
            
            <div class ="col-sm-6 align-self-center">
                <div class="card" style="width: 18rem;">
-                  <img class="card-img-top" src="server_images/paella.jpg" alt="Card image cap" height="200" width="200"/>
+                  <img class="card-img-top" src="~/server_images/paella.jpg" alt="Card image cap" height="200" width="200"/>
                   <div class="card-body">
                     <h5 class="card-title">Platos</h5>
                     <p class="card-text">Administre todos los platos</p>
@@ -35,7 +35,7 @@
        <div class ="row align-items-center">
            <div class ="col-sm-6 align-self-center">
                <div class="card" style="width: 18rem;">
-                  <img class="card-img-top" src="server_images/client.jpg" alt="Card image cap" height="200" width="200"/>
+                  <img class="card-img-top" src="~/server_images/client.jpg" alt="Card image cap" height="200" width="200"/>
                   <div class="card-body">
                     <h5 class="card-title">Clientes y usuarios</h5>
                     <p class="card-text">Ventana de administracion de cuentas de usuarios y clientes</p>
@@ -46,7 +46,7 @@
            
            <div class ="col-sm-6 align-self-center">
                <div class="card" style="width: 18rem;">
-                  <img class="card-img-top" src="server_images/paella.jpg" alt="Card image cap" height="200" width="200"/>
+                  <img class="card-img-top" src="~/server_images/paella.jpg" alt="Card image cap" height="200" width="200"/>
                   <div class="card-body">
                     <h5 class="card-title">Alguna otra cosa</h5>
                     <p class="card-text">Administre alguna otra cosa</p>

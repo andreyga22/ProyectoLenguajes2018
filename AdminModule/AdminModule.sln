@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminTO", "AdminTO\AdminTO.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminDAO", "AdminDAO\AdminDAO.csproj", "{B62FB13C-7D4B-45DC-9474-168962140C95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CocinaUI", "CocinaUI\CocinaUI.csproj", "{6332730F-650A-44C3-AB7C-9570540911E2}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{B62FB13C-7D4B-45DC-9474-168962140C95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B62FB13C-7D4B-45DC-9474-168962140C95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B62FB13C-7D4B-45DC-9474-168962140C95}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6332730F-650A-44C3-AB7C-9570540911E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6332730F-650A-44C3-AB7C-9570540911E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6332730F-650A-44C3-AB7C-9570540911E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6332730F-650A-44C3-AB7C-9570540911E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
