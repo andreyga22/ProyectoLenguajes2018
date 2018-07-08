@@ -58,6 +58,18 @@ namespace AdminBL
             return listaBL;
         }
 
+        public String pedidoDetalle(List<BLDetallePedido> lista)
+        {
+            String lis = "";
+
+            for (int i = 0; i < lista.Count;i++)
+            {
+                lis += "*-" + lista[i].CANTIDAD_PRODUCTO + " " + lista[i].plato.Nombre + " " + lista[i].plato.Codigo + "\n";
+            }
+
+            return lis;
+        }
+
         public List<BLPedidos> listaPedidosFiltradaEstado(List<BLPedidos> listaBL, String estado)
         {
             List<BLPedidos> listaBLFill = new List<BLPedidos>();
