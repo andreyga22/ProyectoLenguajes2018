@@ -41,6 +41,23 @@ namespace AdminBL
             return listaBL;
         }
 
+        public List<BLPedidos> listaPedidosCocina()
+        {
+            List<TOPedidos> listaTO = new DAOPedidos().listaPedidos();
+            List<BLPedidos> listaBL = new List<BLPedidos>();
+
+            for (int i = 0; i < listaTO.Count(); i++)
+            {
+                if (!listaTO[i].estado.Equals("Anulado") || !listaTO[i].estado.Equals("Entregado"))
+                {
+                    listaBL.Add(convert(listaTO[i]));
+                }
+                
+            }
+
+            return listaBL;
+        }
+
         public List<BLPedidos> listaPedidosFiltradaEstado(List<BLPedidos> listaBL, String estado)
         {
             List<BLPedidos> listaBLFill = new List<BLPedidos>();
