@@ -21,7 +21,7 @@ namespace AdminDAO
             comando.Parameters.AddWithValue("@ES", pedido.estado);
             comando.Parameters.AddWithValue("@EM", pedido.email);
             String cod = "";
-            String qryCODI = "SELECT TOP 1 codigo_pedido FROM pedido WHERE(fecha < GETDATE()) and(email = 'edgardo@ucr.com') ORDER BY FECHA DESC;";
+            String qryCODI = "SELECT TOP 1 codigo_pedido FROM pedido WHERE(fecha < GETDATE()) and(email = "+pedido.email+") ORDER BY FECHA DESC;";
             SqlCommand comandoCODI = new SqlCommand(qryCODI, conexion);
 
 

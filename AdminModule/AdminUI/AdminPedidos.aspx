@@ -1,71 +1,56 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminModule.Master" AutoEventWireup="true" CodeBehind="AdminPedidos.aspx.cs" Inherits="AdminUI.AdminPedidos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
-        .auto-style1 {
-            height: 187px;
-        }
         .auto-style2 {
             height: 151px;
-        }
-        .auto-style3 {
-            height: 274px;
-        }
-        .auto-style4 {
-            height: 274px;
-            width: 241px;
-        }
-        .auto-style5 {
-            height: 151px;
-            width: 241px;
-        }
-        .auto-style6 {
-            height: 187px;
-            width: 241px;
         }
         .auto-style7 {
             width: 147%;
         }
-        .auto-style8 {
-            height: 274px;
-            width: 477px;
-        }
         .auto-style9 {
             height: 151px;
-            width: 477px;
+            width: 527px;
         }
-        .auto-style10 {
-            height: 187px;
-            width: 477px;
+        .auto-style12 {
+            height: 151px;
+            width: 211px;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-sm-6 offset-sm-3 align-self-start">
 
-    <table class="auto-style7">
-        <tr>
-            <td class="auto-style4">
-                <asp:Label ID="Label14" runat="server" Text="Busqueda por email"></asp:Label>
+                <div class="form-group">
+      <asp:Label ID="Label14" runat="server" Text="Busqueda por email"></asp:Label>
+       <asp:TextBox ID="TextBox4" class="form-control" runat="server"></asp:TextBox>
+       </div>
+
+                 <div class="col-sm-3 offset-md-4">
+                     <asp:Button ID="Button2" class="btn btn-danger" runat="server" Text="Buscar" OnClick="Button2_Click" />
+                    &nbsp;
+                    <asp:Button ID="Button6" class="btn btn-danger" runat="server" OnClick="Button6_Click" Text="Limpiar" />
+   
+                 </div>
+
                 <br />
-        <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
-        <asp:Button ID="Button2" runat="server" Text="Buscar" OnClick="Button2_Click" />
-                <br />
-                <br />
-                <br />
-        <asp:Label ID="Label4" runat="server" Text="CODIGO: "></asp:Label>
-        <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Button6" runat="server" OnClick="Button6_Click" Text="Limpiar" />
-                <br />
-        <asp:Label ID="Label5" runat="server" Text="FECHA: "></asp:Label>
-        <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
-                <br />
-                <br />
-    
-        <asp:Label ID="Label2" runat="server" Text="email"></asp:Label>
-                <br />
-        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-                <br />
+
+                <div class="form-group">
+        <asp:Label ID="Label4" runat="server" Text="Codigo"></asp:Label>
+        <asp:TextBox  class="form-control" ID="TextBox6" runat="server" Enabled="False"></asp:TextBox>
+                 </div>
+                    <div class="form-group">
+        <asp:Label ID="Label5" runat="server" Text="Fecha"></asp:Label>
+        <asp:TextBox  class="form-control" ID="TextBox7" runat="server" Enabled="False"></asp:TextBox>
+                </div>
+
+       <div class="form-group">
+        <asp:Label ID="Label2" runat="server" Text="Email"></asp:Label>
+        <asp:TextBox  class="form-control" ID="TextBox2" runat="server"></asp:TextBox>
+       </div>
+        <div class="form-group">   
         <asp:Label ID="Label3" runat="server" Text="Estado"></asp:Label>
                 <asp:RadioButtonList ID="RadioButtonList1" runat="server">
                     <asp:ListItem>A Tiempo</asp:ListItem>
@@ -74,34 +59,34 @@
                     <asp:ListItem>Anulado</asp:ListItem>
                     <asp:ListItem>Entregado</asp:ListItem>
                 </asp:RadioButtonList>
-                <br />
-        <asp:Button ID="Button1" runat="server" Text="Insertar" OnClick="Button1_Click" />
-        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="editar" />
-        <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="eliminar" />
-            </td>
-            <td class="auto-style8">
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-            </td>
-            <td class="auto-style3"></td>
-        </tr>
+            <br />
+               </div>
+
+                 <div class="row align-items-center">
+            <div class="col-sm-4 offset-3 align-self-start">
+        <asp:Button class="btn btn-danger" ID="Button1" runat="server" Text="Insertar/Modificar" OnClick="Button1_Click" />
+        <asp:Button class="btn btn-light" ID="Button4" runat="server" OnClick="Button4_Click" Text="eliminar" />
+               <br />
+                    <br />
+            </div>
+                      </div>
+
+
+
+    
+            </div>
+        </div>
+    </div>
+
+    <table class="auto-style7">
         <tr>
-            <td class="auto-style5">
+            <td class="auto-style12">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button class="btn btn-danger" ID="Button5" runat="server" Text="filtrar lista" OnClick="Button5_Click" />
+                <br />
+                <br />
+                <br />
+                <br />
         &nbsp;<br />
         <asp:Label ID="Label8" runat="server" Text="Email cliente"></asp:Label>
                 <asp:CheckBox ID="CheckBox2" runat="server" />
@@ -126,8 +111,7 @@
                 <br />
             </td>
             <td class="auto-style9">
-        <asp:Button ID="Button5" runat="server" Text="filtrar lista" OnClick="Button5_Click" />
-        <asp:GridView ID="GridView1" runat="server" Width="453px" Height="419px">
+        &nbsp;<asp:GridView ID="GridView1" runat="server" Width="502px" Height="532px">
         </asp:GridView>
     
                 <br />
@@ -168,11 +152,7 @@
                 </asp:Calendar>
             </td>
         </tr>
-        <tr>
-            <td class="auto-style6"></td>
-            <td class="auto-style10"></td>
-            <td class="auto-style1"></td>
-        </tr>
+      
     </table>
 
 

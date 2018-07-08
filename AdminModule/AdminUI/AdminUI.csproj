@@ -72,7 +72,6 @@
     <Content Include="bin\AdminUI.dll" />
     <Content Include="bin\AdminUI.pdb" />
     <Content Include="ClienteMenu.aspx" />
-    <Content Include="cocinaIndex.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -170,13 +169,6 @@
     </Compile>
     <Compile Include="ClienteMenu.aspx.designer.cs">
       <DependentUpon>ClienteMenu.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="cocinaIndex.aspx.cs">
-      <DependentUpon>cocinaIndex.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="cocinaIndex.aspx.designer.cs">
-      <DependentUpon>cocinaIndex.aspx</DependentUpon>
     </Compile>
     <Compile Include="ControlUsuarioLogin.aspx.cs">
       <DependentUpon>ControlUsuarioLogin.aspx</DependentUpon>

@@ -31,33 +31,38 @@ namespace AdminUI
             pedido = new ManagerPedidos().ConsultarPedidos(buscado);
             TextBox2.Text = pedido.email;
             RadioButtonList1.SelectedValue = pedido.estado;
-            Label6.Text = pedido.codigo + "";
-            Label7.Text = pedido.fecha.ToString();
+            TextBox6.Text = pedido.codigo + "";
+            TextBox7.Text = pedido.fecha.ToString();
             reset();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            pedido = new BLPedidos();
-            pedido.email = TextBox2.Text;
-            pedido.estado = RadioButtonList1.SelectedValue.ToString();
-            pedido.fecha = DateTime.Now;
-            new ManagerPedidos().InsertarPedidos(pedido);
-            reset();
+            if (TextBox6.Text != String.Empty)
+            {
+                pedido.codigo = int.Parse(TextBox6.Text);
+                pedido.email = TextBox2.Text;
+                pedido.estado = RadioButtonList1.SelectedValue.ToString();
+                new ManagerPedidos().EditarPedidos(pedido);
+                reset();
+            }
+            else
+            {
+                pedido = new BLPedidos();
+                pedido.email = TextBox2.Text;
+                pedido.estado = RadioButtonList1.SelectedValue.ToString();
+                pedido.fecha = DateTime.Now;
+                new ManagerPedidos().InsertarPedidos(pedido);
+                reset();
+            }
+            
         }
 
-        protected void Button3_Click(object sender, EventArgs e)
-        {
-            pedido.codigo = int.Parse(Label6.Text);
-            pedido.email = TextBox2.Text;
-            pedido.estado = RadioButtonList1.SelectedValue.ToString();
-            new ManagerPedidos().EditarPedidos(pedido);
-            reset();
-        }
+       
 
         protected void Button4_Click(object sender, EventArgs e)
         {
-            pedido.codigo = int.Parse(Label6.Text);
+            pedido.codigo = int.Parse(TextBox6.Text);
             new ManagerPedidos().EliminarPedidos(pedido);
             reset();
         }
@@ -65,8 +70,8 @@ namespace AdminUI
         protected void Button6_Click(object sender, EventArgs e)
         {
             TextBox2.Text = "";
-            Label6.Text = "";
-            Label7.Text = "";
+            TextBox6.Text = "";
+            TextBox7.Text = "";
         }
 
         protected void Button5_Click(object sender, EventArgs e)
