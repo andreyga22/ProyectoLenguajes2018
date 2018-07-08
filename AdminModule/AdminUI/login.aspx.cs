@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using AdminBL;
+using AdminUI;
 namespace AdminUI
 {
     public partial class login : System.Web.UI.Page
@@ -25,7 +26,7 @@ namespace AdminUI
 
                 if (cli.rol.Equals("Cocina"))
                 {
-                    Response.Redirect("cocinaIndex.aspx");
+                    Response.Redirect("CocinaIndex.aspx");
                 }
                 else if (cli.rol.Equals("Administrador"))
                 {

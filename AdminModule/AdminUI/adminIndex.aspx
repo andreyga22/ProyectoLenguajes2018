@@ -39,7 +39,7 @@
                   <div class="card-body">
                     <h5 class="card-title">Clientes y usuarios</h5>
                     <p class="card-text">Ventana de administracion de cuentas de usuarios y clientes</p>
-                    <a href="#" class="btn btn-primary">Clientes y usuarios</a>
+                    <a href="AdminClientes.aspx" class="btn btn-primary">Clientes y usuarios</a>
                   </div>
                 </div>
            </div>
