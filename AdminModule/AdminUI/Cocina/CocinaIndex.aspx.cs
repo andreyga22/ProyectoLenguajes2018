@@ -10,7 +10,13 @@ namespace AdminUI.Cocina {
     public partial class CocinaIndex : System.Web.UI.Page {
         private List<BLPedidos> listaPedidos = new List<BLPedidos>();
         protected void Page_Load(object sender, EventArgs e) {
+            //new ControlUsuarioLogin().verificaCocina();
             traerLista();
+            if (listaPedidos.Count == 0) {
+                btnEntregar.Visible = false;
+            } else {
+                btnEntregar.Visible = true;
+            }
             cargarCartas();
             if (!IsPostBack) {
                 ViewState["listaPedidos"] = null;
@@ -19,7 +25,7 @@ namespace AdminUI.Cocina {
 
         private void traerLista() {
             ManagerPedidos manager = new ManagerPedidos();
-            listaPedidos = manager.listaPedidos();
+            listaPedidos = manager.listaPedidosCocina();
         }
 
         private void retornar() {
@@ -30,72 +36,32 @@ namespace AdminUI.Cocina {
         }
 
         private void cargarCartas() {
+            fila1.Text = "";
+            for (int i = 0; i < 6; i++) {
+                if (i < listaPedidos.Count) {
+                    if (i == 0 || i == 3) {
+                        fila1.Text = fila1.Text + "<div class=\"row align-items - center\">";
+                    }
+                    fila1.Text = fila1.Text + "<div class=\"col-lg-4 align-self-center\">" +
+                    "<div class=\"card text-white bg-" + estadoColor(listaPedidos[i]) + " mb-3\" style=\"max-width: 18rem;\">" +
+                      "<div class=\"card-header\">Orden: " + listaPedidos[i].codigo + "</div>" +
+                      "<div class=\"card-body\">" +
+                        "<h5 class=\"card-title\">Cliente: " + listaPedidos[i].email + "</h5>" +
+                        "<p class=\"card-text\">" + new ManagerPedidos().pedidoDetalle(listaPedidos[i].detalles) + "</p>" +
+                         "</div>" + 
+                         "</div>" +
+                    "</div>";
+                    if (i == 2 || i == 5) {
+                        fila1.Text = fila1.Text + "</div>";
+                    }
+                }
+            }
 
-            fila1.Text = "<div class=\"row align-items - center\">" +
-              "<div class=\"col-lg-4 align-self-center\">" +
-                "<div class=\"card text-white bg-"+estadoColor( listaPedidos[0]) +" mb-3\" style=\"max-width: 18rem;\">"+
-                  "<div class=\"card-header\">Orden: " + listaPedidos[0].codigo + "</div>" +
-                  "<div class=\"card-body\">"+
-                    "<h5 class=\"card-title\">Cliente: " + listaPedidos[0].email + "</h5>" +
-                    "<p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>"+
-                     "<a href = \"#\" class=\"btn btn-primary\">Entregar Pedido</a>"+
-                  "</div>"+
-                "</div>"+
-            "</div>"+
-
-            "<div class=\"col-lg-4 align-self-center\">" +
-                "<div class=\"card text-white bg-" + estadoColor(listaPedidos[1]) + " mb-3\" style=\"max-width: 18rem;\">" +
-                  "<div class=\"card-header\">Orden: " + listaPedidos[1].codigo + "</div>" +
-                  "<div class=\"card-body\">" +
-                    "<h5 class=\"card-title\">Cliente: " + listaPedidos[1].email + "</h5>" +
-                    "<p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>" +
-                  "</div>" +
-                "</div>" +
-            "</div>" +
-
-            "<div class=\"col-lg-4 align-self-center\">" +
-                "<div class=\"card text-white bg-" + estadoColor(listaPedidos[2]) + " mb-3\" style=\"max-width: 18rem;\">" +
-                  "<div class=\"card-header\">Orden: " + listaPedidos[2].codigo + "</div>" +
-                  "<div class=\"card-body\">" +
-                    "<h5 class=\"card-title\">Cliente: " + listaPedidos[2].email + "</h5>" +
-                    "<p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>" +
-                  "</div>" +
-                "</div>" +
-            "</div>" +
-            "</div>";
-
-            fila2.Text = "<div class=\"row align-items - center\">" +
-              "<div class=\"col-lg-4 align-self-center\">" +
-                "<div class=\"card text-white bg-" + estadoColor(listaPedidos[3]) + " mb-3\" style=\"max-width: 18rem;\">" +
-                  "<div class=\"card-header\">Orden: " + listaPedidos[3].codigo + "</div>" +
-                  "<div class=\"card-body\">" +
-                    "<h5 class=\"card-title\">Cliente: " + listaPedidos[3].email + "</h5>" +
-                    "<p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>" +
-                  "</div>" +
-                "</div>" +
-            "</div>" +
-
-            "<div class=\"col-lg-4 align-self-center\">" +
-                "<div class=\"card text-white bg-" + estadoColor(listaPedidos[4]) + " mb-3\" style=\"max-width: 18rem;\">" +
-                  "<div class=\"card-header\">Orden: " + listaPedidos[4].codigo + "</div>" +
-                  "<div class=\"card-body\">" +
-                    "<h5 class=\"card-title\">Cliente: " + listaPedidos[4].email + "</h5>" +
-                    "<p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>" +
-                  "</div>" +
-                "</div>" +
-            "</div>" +
-
-            "<div class=\"col-lg-4 align-self-center\">" +
-                "<div class=\"card text-white bg-" + estadoColor(listaPedidos[5]) + " mb-3\" style=\"max-width: 18rem;\">" +
-                  "<div class=\"card-header\">Orden: " + listaPedidos[5].codigo + "</div>" +
-                  "<div class=\"card-body\">" +
-                    "<h5 class=\"card-title\">Cliente: " + listaPedidos[5].email + "</h5>" +
-                    "<p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>" +
-                  "</div>" +
-                "</div>" +
-            "</div>" +
-
-            "</div>";
+            if (listaPedidos.Count > 6) {
+                lblRestantes.Text = listaPedidos.Count - 6 + " restantes en cola";
+            } else {
+                lblRestantes.Text = "No hay pedidos en la lista";
+            }
         }
 
         private String estadoColor(BLPedidos pedido) {
@@ -108,6 +74,14 @@ namespace AdminUI.Cocina {
                     return "danger";
                 }
             }
+        }
+
+        protected void btnEntregar_Click(object sender, EventArgs e) {
+            ViewState["listaPedidos"] = listaPedidos[0];
+            listaPedidos[0].estado = "Entregado";
+            new ManagerPedidos().EditarPedidos(listaPedidos[0]);
+            listaPedidos.Remove(listaPedidos[0]);
+            Response.Redirect("~/Cocina/CocinaIndex.aspx");
         }
     }
 }

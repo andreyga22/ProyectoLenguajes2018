@@ -18,7 +18,7 @@ namespace AdminUI
         public void cerrarSesion()
         {
             Session["usuarioLO"] = null;
-            Response.Redirect("login.aspx");
+            Response.Redirect("~/Login/login.aspx");
         }
 
         public BLCliente user()
@@ -29,21 +29,18 @@ namespace AdminUI
         {
             if (user() != null && !user().rol.Equals("Cliente"))
             {
-                Response.Redirect("login.aspx");
+                Response.Redirect("~/Login/login.aspx");
             }
         }
         public void verificaCocina()
         {
-            if (user() != null && !user().rol.Equals("Cocina"))
-            {
-                Response.Redirect("login.aspx");
-            }
+            if ((user() != null && !user().rol.Equals("Cocina")) && !user().rol.Equals("")) {
+                Response.Redirect("~/Login/login.aspx");
         }
-        public void verificaAdmin()
-        {
-            if (user() != null && !user().rol.Equals("Administrador"))
-            {
-                Response.Redirect("login.aspx");
+    }
+        public void verificaAdmin() {
+            if (user() != null && !user().rol.Equals("Administrador")) {
+                Response.Redirect("~/Administrador/AdminClientes.aspx");
             }
         }
 

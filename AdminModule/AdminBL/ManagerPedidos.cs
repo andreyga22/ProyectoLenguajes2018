@@ -48,7 +48,7 @@ namespace AdminBL
 
             for (int i = 0; i < listaTO.Count(); i++)
             {
-                if (!listaTO[i].estado.Equals("Anulado") || !listaTO[i].estado.Equals("Entregado"))
+                if (!listaTO[i].estado.Equals("Anulado") && !listaTO[i].estado.Equals("Entregado"))
                 {
                     listaBL.Add(convert(listaTO[i]));
                 }
@@ -64,7 +64,7 @@ namespace AdminBL
 
             for (int i = 0; i < lista.Count;i++)
             {
-                lis += "*-" + lista[i].CANTIDAD_PRODUCTO + " " + lista[i].plato.Nombre + " " + lista[i].plato.Codigo + "\n";
+                lis += "*-" + lista[i].CANTIDAD_PRODUCTO + " " + lista[i].plato.Nombre + " " + lista[i].plato.Codigo + "<br/>";
             }
 
             return lis;

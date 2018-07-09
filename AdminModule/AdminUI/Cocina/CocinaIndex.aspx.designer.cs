@@ -13,13 +13,13 @@ namespace AdminUI.Cocina {
     public partial class CocinaIndex {
         
         /// <summary>
-        /// fila2 control.
+        /// btnEntregar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal fila2;
+        protected global::System.Web.UI.WebControls.Button btnEntregar;
         
         /// <summary>
         /// fila1 control.
@@ -29,6 +29,24 @@ namespace AdminUI.Cocina {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal fila1;
+        
+        /// <summary>
+        /// fila2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal fila2;
+        
+        /// <summary>
+        /// lblRestantes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRestantes;
         
         /// <summary>
         /// btnDevolver control.

@@ -26,11 +26,11 @@ namespace AdminUI
 
                 if (cli.rol.Equals("Cocina"))
                 {
-                    Response.Redirect("CocinaIndex.aspx");
+                    Response.Redirect("~/Cocina/CocinaIndex.aspx");
                 }
                 else if (cli.rol.Equals("Administrador"))
                 {
-                    Response.Redirect("adminIndex.aspx");
+                    Response.Redirect("~/Administrador/adminIndex.aspx");
                 }
 
             }
