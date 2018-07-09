@@ -6,12 +6,18 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace AdminUI {
-    public partial class adminIndex : System.Web.UI.Page {
+    public partial class index : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-            if (new ControlUsuarioLogin().verificaAdmin() == true)
-            {
-                Response.Redirect("~/Login/login.aspx");
-            }
+
+        }
+
+        protected void btnPlatos_Click(object sender, EventArgs e) {
+
+        }
+
+        protected void btnPedidos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

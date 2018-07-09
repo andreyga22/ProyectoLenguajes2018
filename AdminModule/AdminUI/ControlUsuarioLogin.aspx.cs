@@ -18,34 +18,33 @@ namespace AdminUI
         public void cerrarSesion()
         {
             Session["usuarioLO"] = null;
-            Response.Redirect("~/Login/login.aspx");
+            Response.Redirect("login.aspx");
         }
 
         public BLCliente user()
         {
             return (BLCliente)Session["usuarioLO"];
         }
-        public Boolean verificaCliente()
+        public void verificaCliente()
         {
-            if (user() == null || !user().rol.Equals("Cliente") || !user().rol.Equals(""))
+            if (user() != null && !user().rol.Equals("Cliente"))
             {
-                return true;
+                Response.Redirect("login.aspx");
             }
-            return false;
         }
-        public Boolean verificaCocina()
+        public void verificaCocina()
         {
-            if ((user() == null || !user().rol.Equals("Cocina")) || !user().rol.Equals("")) {
-                return true;
-            }
-            return false;
-        }
-        public Boolean verificaAdmin() {
-            if (user() == null || !user().rol.Equals("Administrador") || !user().rol.Equals(""))
+            if (user() != null && !user().rol.Equals("Cocina"))
             {
-                return true;
+                Response.Redirect("login.aspx");
+            }
         }
-            return false;
+        public void verificaAdmin()
+        {
+            if (user() != null && !user().rol.Equals("Administrador"))
+            {
+                Response.Redirect("login.aspx");
+            }
         }
 
 

@@ -13,10 +13,7 @@ namespace AdminUI
         BLPedidos pedido = new BLPedidos();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (new ControlUsuarioLogin().verificaAdmin() == true)
-            {
-                Response.Redirect("~/Login/login.aspx");
-            }
+            //new ControlUsuarioLogin().verificaAdmin();
             ViewState["pedido"] = new BLPedidos();
             reset();
         }

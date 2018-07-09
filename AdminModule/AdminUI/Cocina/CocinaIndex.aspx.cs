@@ -10,7 +10,10 @@ namespace AdminUI.Cocina {
     public partial class CocinaIndex : System.Web.UI.Page {
         private List<BLPedidos> listaPedidos = new List<BLPedidos>();
         protected void Page_Load(object sender, EventArgs e) {
-            //new ControlUsuarioLogin().verificaCocina();
+            if (new ControlUsuarioLogin().verificaCocina() == true)
+            {
+                Response.Redirect("~/Login/login.aspx");
+            }
             traerLista();
             if (listaPedidos.Count == 0) {
                 btnEntregar.Visible = false;

@@ -13,10 +13,7 @@ namespace AdminUI {
     public partial class adminPlatos : System.Web.UI.Page {
         private string url = "";
         protected void Page_Load(object sender, EventArgs e) {
-            if (new ControlUsuarioLogin().verificaAdmin() == true)
-            {
-                Response.Redirect("~/Login/login.aspx");
-            }
+            //new ControlUsuarioLogin().verificaAdmin();
             btnBorrar.Enabled = false;
             cargarGrid();
 
@@ -55,7 +52,7 @@ namespace AdminUI {
                 plato.Descripcion = txtDes.Text.Trim();
                 plato.Precio = Convert.ToInt32( txtPre.Text.Trim());
                 guardarFoto();
-                plato.Fotografia = "~/img/" + Foto.FileName.Trim();
+                plato.Fotografia = "/img/" + Foto.FileName.Trim();
                 plato.Estado = Convert.ToBoolean(rbEstado.SelectedValue);
                 manejador.insertarPlato(plato);
             } else {
@@ -69,7 +66,7 @@ namespace AdminUI {
                 }
                 if (Foto.HasFile) {
                     guardarFoto();
-                    plato = new BLPlato(txtNom.Text.Trim(), txtDes.Text.Trim(), Convert.ToDouble(txtPre.Text.Trim()), "~/img/" + Foto.FileName.Trim(), Convert.ToInt32( txtCod.Text.Trim()),estado2);
+                    plato = new BLPlato(txtNom.Text.Trim(), txtDes.Text.Trim(), Convert.ToDouble(txtPre.Text.Trim()), "/img/" + Foto.FileName.Trim(), Convert.ToInt32( txtCod.Text.Trim()),estado2);
                      manejador.actualizarPlato(plato);
                     borrarFoto(Convert.ToString( ViewState["FotoVieja"]));
                 } else {
