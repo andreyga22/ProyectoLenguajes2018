@@ -73,11 +73,6 @@
     <Content Include="bin\AdminUI.pdb" />
     <Content Include="bin\CocinaUI.dll" />
     <Content Include="bin\CocinaUI.pdb" />
-    <Content Include="Clientecin\carrito.html" />
-    <Content Include="Clientecin\cuenta.html" />
-    <Content Include="Clientecin\footer.html" />
-    <Content Include="Clientecin\header.html" />
-    <Content Include="Clientecin\index.html" />
     <Content Include="Cocina\CocinaIndex.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -241,9 +236,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Clientecin\css\" />
-    <Folder Include="Clientecin\img\" />
-    <Folder Include="Clientecin\js\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
