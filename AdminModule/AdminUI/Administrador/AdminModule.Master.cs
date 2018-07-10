@@ -21,5 +21,10 @@ namespace AdminUI {
                 btnCerrar.Visible = true;
             }
         }
+
+        private void cerrarSesion() {
+            new ControlUsuarioLogin().cerrarSesion();
+            Response.Redirect("/Login/login.aspx");
+        }
     }
 }
