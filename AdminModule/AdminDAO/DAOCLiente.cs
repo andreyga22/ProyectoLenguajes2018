@@ -96,6 +96,40 @@ namespace AdminDAO
             return cliente;
         }
 
+        public TOCliente ConsultarClienteId(String id)
+        {
+            TOCliente cliente = new TOCliente();
+            qry = "SELECT * FROM CLIENTE WHERE CODIGO_CLIENTE = @ID;";
+            comando = new SqlCommand(qry, conexion);
+            comando.Parameters.AddWithValue("@ID", id);
+
+
+            conexion.Open();
+            SqlDataReader reader = comando.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    cliente.nombreUsuario = reader[0].ToString();
+                    cliente.primerApellido = reader[1].ToString();
+                    cliente.segundoApellido = reader[2].ToString();
+                    cliente.email = reader[3].ToString();
+                    cliente.telefono = reader[4].ToString();
+                    cliente.id = int.Parse(reader[5].ToString());
+                    cliente.contrasena = reader[6].ToString();
+                    cliente.rol = reader[7].ToString();
+                    cliente.estado = Convert.ToBoolean(reader[8]);
+                }
+            }
+
+
+            conexion.Close();
+
+
+            return cliente;
+        }
+
         public void EliminarCliente(TOCliente cliente)
         {
             qry = "DELETE FROM CLIENTE WHERE CODIGO_CLIENTE = @ID; ";

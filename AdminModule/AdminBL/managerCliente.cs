@@ -18,6 +18,10 @@ namespace AdminBL
         {
             return convert(new DAOCLiente().ConsultarCliente(id));
         }
+        public BLCliente ConsultarClienteId(String id)
+        {
+            return convert(new DAOCLiente().ConsultarClienteId(id));
+        }
 
         public BLCliente ConsultarClienteConContraseña(String id,String contra)
         {

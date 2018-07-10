@@ -3,7 +3,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-                
+        <br />
+            <br />        
         <div class="container">
 
         
@@ -27,38 +28,46 @@
                     
                 </div>
                 <div class="col-sm-3 offset-md-4">
-                    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" type="button" class="btn btn-danger" OnClick="btnBuscar_Click"/>
+                    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" type="button" class="btn btn-danger" OnClick="btnBuscar_Click" CausesValidation="False"/>
                 </div>
                 <br />
                 
 
                 <div class="form-group">
-                    <label for="txtNombre">Nombre</label>
-                    <asp:TextBox ID="txtNombre" runat="server" class="form-control" placeholder="Nombre" ></asp:TextBox>
+                    <label for="txtNombre">Nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtNombre" ErrorMessage="Este Campo no puede estar vacio"></asp:RequiredFieldValidator>
+&nbsp;<asp:TextBox ID="txtNombre" runat="server" class="form-control" placeholder="Nombre" ></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <label for="txtPriApe">Primer Apellido</label>
-                    <asp:TextBox ID="txtPriApe" runat="server" class="form-control" placeholder="Primer Apellido"></asp:TextBox>
+                    <label for="txtPriApe">Primer Apellido&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPriApe" ErrorMessage="Este Campo no puede estar vacio"></asp:RequiredFieldValidator>
+                    </label>
+                    &nbsp;<asp:TextBox ID="txtPriApe" runat="server" class="form-control" placeholder="Primer Apellido"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <label for="txtSegApe">Segundo Apellido</label>
-                    <asp:TextBox ID="txtSegApe" runat="server" class="form-control" placeholder="Segundo Apellido"></asp:TextBox>
+                    <label for="txtSegApe">Segundo Apellido&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtSegApe" ErrorMessage="Este Campo no puede estar vacio"></asp:RequiredFieldValidator>
+                    </label>
+                    &nbsp;<asp:TextBox ID="txtSegApe" runat="server" class="form-control" placeholder="Segundo Apellido"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <label for="txtEmail">Correo Electronico</label>
-                    <asp:TextBox ID="txtEmail" runat="server" class="form-control" placeholder="Correo Electronico"></asp:TextBox>
+                    <label for="txtEmail">Correo Electronico&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label><asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtEmail" ErrorMessage="Formato incorrecto" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+&nbsp;<asp:TextBox ID="txtEmail" runat="server" class="form-control" placeholder="Correo Electronico"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <label for="txtTelefono">Telefono</label>
-                    <asp:TextBox ID="txtTelefono" runat="server" class="form-control" placeholder="Telefono"></asp:TextBox>
+                    <label for="txtTelefono">Telefono
+                    </label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <label for="txtSegApe"><asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtTelefono" ErrorMessage="Este Campo no puede estar vacio"></asp:RequiredFieldValidator>
+                    </label>
+                    <asp:TextBox ID="txtTelefono" runat="server" class="form-control" placeholder="Telefono" MaxLength="8"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <label for="txtContrasena">Contraseña</label>
-                    <asp:TextBox TextMode="Password" ID="txtContrasena" runat="server" class="form-control" placeholder="Contraseña"></asp:TextBox>
+                    <label for="txtContrasena">Contraseña<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtContrasena" ErrorMessage="Este Campo no puede estar vacio"></asp:RequiredFieldValidator>
+                    </label>
+                    &nbsp;<asp:TextBox TextMode="Password" ID="txtContrasena" runat="server" class="form-control" placeholder="Contraseña"></asp:TextBox>
                 </div> 
                    <div class="form-group">
-                    <label for="txtrol">Rol</label>
-                    <asp:TextBox  ID="txtrol" runat="server" class="form-control" placeholder="Rol"></asp:TextBox>
+                    <label for="txtrol">Rol<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtrol" ErrorMessage="Este Campo no puede estar vacio"></asp:RequiredFieldValidator>
+                       </label>
+                    &nbsp;<asp:TextBox  ID="txtrol" runat="server" class="form-control" placeholder="Rol"></asp:TextBox>
                 </div> 
 
                  <div class="form-group">                    <label for="exampleFormControlInput1">Estado</label>
