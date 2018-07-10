@@ -71,6 +71,8 @@
     <Content Include="bin\AdminTO.pdb" />
     <Content Include="bin\AdminUI.dll" />
     <Content Include="bin\AdminUI.pdb" />
+    <Content Include="bin\CocinaUI.dll" />
+    <Content Include="bin\CocinaUI.pdb" />
     <Content Include="Cocina\CocinaIndex.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -78,6 +80,18 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="img\1.jpg" />
+    <Content Include="img\121812.jpg" />
+    <Content Include="img\207783.jpg" />
+    <Content Include="img\3.jpg" />
+    <Content Include="img\8bit.jpg" />
+    <Content Include="img\fotografo1.png" />
+    <Content Include="img\KARLA_14.JPG" />
+    <Content Include="img\monolith-sun.jpg" />
+    <Content Include="img\paella.jpeg" />
+    <Content Include="img\papas.jpg" />
+    <Content Include="img\sandwich.jpg" />
+    <Content Include="img\thumb-1920-207783.jpg" />
     <Content Include="Login\ControlUsuarioLogin.aspx" />
     <Content Include="Login\login.aspx" />
     <Content Include="obj\Debug\AdminUI.csproj.FileListAbsolute.txt" />
@@ -214,7 +228,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="img\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="server_images\" />
   </ItemGroup>

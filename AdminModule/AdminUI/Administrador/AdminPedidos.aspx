@@ -29,9 +29,9 @@
        </div>
 
                  <div class="col-sm-3 offset-md-4">
-                     <asp:Button ID="Button2" class="btn btn-danger" runat="server" Text="Buscar" OnClick="Button2_Click" />
+                     <asp:Button ID="Button2" class="btn btn-danger" runat="server" Text="Buscar" OnClick="Button2_Click" CausesValidation="False" />
                     &nbsp;
-                    <asp:Button ID="Button6" class="btn btn-danger" runat="server" OnClick="Button6_Click" Text="Limpiar" />
+                    <asp:Button ID="Button6" class="btn btn-danger" runat="server" OnClick="Button6_Click" Text="Limpiar" CausesValidation="False" />
    
                  </div>
 
@@ -48,6 +48,7 @@
 
        <div class="form-group">
         <asp:Label ID="Label2" runat="server" Text="Email"></asp:Label>
+           <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Espacio vacio"></asp:RegularExpressionValidator>
         <asp:TextBox  class="form-control" ID="TextBox2" runat="server"></asp:TextBox>
        </div>
         <div class="form-group">   
@@ -82,7 +83,7 @@
         <tr>
             <td class="auto-style12">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button class="btn btn-danger" ID="Button5" runat="server" Text="filtrar lista" OnClick="Button5_Click" />
+        <asp:Button class="btn btn-danger" ID="Button5" runat="server" Text="filtrar lista" OnClick="Button5_Click" CausesValidation="False" />
                 <br />
                 <br />
                 <br />

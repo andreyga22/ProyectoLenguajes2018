@@ -27,7 +27,7 @@ namespace AdminUI
         }
         public Boolean verificaCliente()
         {
-            if (user() == null || !user().rol.Equals("Cliente") || !user().rol.Equals(""))
+            if (user() == null || !user().rol.Equals("Cliente") || user().rol.Equals(""))
             {
                 return true;
             }
@@ -35,13 +35,13 @@ namespace AdminUI
         }
         public Boolean verificaCocina()
         {
-            if ((user() == null || !user().rol.Equals("Cocina")) || !user().rol.Equals("")) {
+            if ((user() == null || !user().rol.Equals("Cocina")) || user().rol.Equals("")) {
                 return true;
             }
             return false;
         }
         public Boolean verificaAdmin() {
-            if (user() == null || !user().rol.Equals("Administrador") || !user().rol.Equals(""))
+            if (user() == null || !user().rol.Equals("Administrador") || user().rol.Equals(""))
             {
                 return true;
         }

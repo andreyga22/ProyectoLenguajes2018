@@ -17,6 +17,7 @@ namespace AdminUI
             {
                 Response.Redirect("~/Login/login.aspx");
             }
+
             ViewState["pedido"] = new BLPedidos();
             reset();
         }
