@@ -37,7 +37,7 @@ namespace AdminUI
             {
                 managerCliente mc = new managerCliente();
                 BLCliente cliente = new BLCliente();
-                cliente = mc.ConsultarCliente(txtBuscar.Text);
+                cliente = mc.ConsultarClienteId(txtBuscar.Text);
                 txtNombre.Text = cliente.nombreUsuario;
                 txtPriApe.Text = cliente.primerApellido;
                 txtSegApe.Text = cliente.segundoApellido;
