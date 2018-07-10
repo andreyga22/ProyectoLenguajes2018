@@ -13,9 +13,9 @@ namespace AdminUI
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (new ControlUsuarioLogin().verificaAdmin()==true) {
-                Response.Redirect("~/Login/login.aspx");
-            }
+            //if (new ControlUsuarioLogin().verificaAdmin()==true) {
+            //    Response.Redirect("~/Login/login.aspx");
+            //}
                 
 
             if (!IsPostBack)

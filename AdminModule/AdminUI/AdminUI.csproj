@@ -136,6 +136,14 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="server_images\client.jpg" />
+    <Content Include="server_images\icon.png" />
+    <Content Include="server_images\order.jpg" />
+    <Content Include="server_images\other.jpg" />
+    <Content Include="server_images\paella.jpg" />
+    <Content Include="server_images\slogan.png" />
+    <Content Include="server_images\sopa.jpg" />
+    <Content Include="server_images\surimi.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -229,7 +237,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="server_images\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
